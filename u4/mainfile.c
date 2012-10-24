@@ -13,12 +13,13 @@
 
 char kleinstesZeichen(char c[]);
 char groesstesZeichen(char c[]);
-char input[4];
-int midint, delta;
-float midfl;
 
 int main()
 {
+	char input[4];
+	int midint, delta;
+	float midfl;
+
 	printf("Bitte geben Sie vier einzelne Zeichen ein:");
 
 	scanf("%c %c %c %c", &input[0], &input[1], &input[2], &input[3]);
@@ -38,6 +39,7 @@ int main()
 	printf("Groesstes Zeichen:       %c\n", groesstesZeichen(input));
 	printf("Abstand Min/Max:         %d Zeichen\n", delta);
 
+
 	/*system("pause");*/
 	return 0;
 }
@@ -50,7 +52,7 @@ char kleinstesZeichen(char c[])
 	min = c[0];
 
 	for (i = 0; i < 4; i++) {
-		if (input[i] < min) min = input[i];
+		if (c[i] < min) min = c[i];
 	}
 
 	return min;
@@ -64,7 +66,7 @@ char groesstesZeichen(char c[])
 	max = c[0];
 
 	for (i = 0; i < 4; i++) {
-		if (input[i] > max) max = input[i];
+		if (c[i] > max) max = c[i];
 	}
 
 	return max;
