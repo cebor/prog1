@@ -4,12 +4,12 @@
 / Datum       : Urprogramm: 24.10.2012                                          
 / Eingabe     : 2 rationale Zahlen                          
 / Verarbeitung: diverse Berechnungen                   
-/ Änderungen  : 24.10.2012
+/ Ã„nderungen  : 24.10.2012
 / *******************************************************************/
 
-/* Einbinden von nötigen Header-Dateien                             */
+/* Einbinden von nÃ¶tigen Header-Dateien                             */
 #include <stdio.h>    /* Standard Input/ Output  z.B. scanf, printf */
-/*#include <stdlib.h>*/   /* Standard-Bibliothek, z.B. für system       */
+/*#include <stdlib.h>*/   /* Standard-Bibliothek, z.B. fÃ¼r system       */
 #include "mainfile.h"
 
 
@@ -21,18 +21,18 @@ int main()
 	printf("Bitte Zaehler und Nenner Bruch 1 eingeben: ");
 	scanf("%d %d", &f1.num, &f1.deno);
 
-
 	// 2. Bruch
-	printf("Bitte Zaehler und Nenner Bruch 1 eingeben: ");
+	printf("Bitte Zaehler und Nenner Bruch 2 eingeben: ");
 	scanf("%d %d", &f2.num, &f2.deno);
 
 
-	printf("%d / %d\n", f1.num, f1.deno);
-	printf("%d / %d\n", f2.num, f2.deno);
+	printf("%d/%d * %d/%d = %d/%d\n", f1.num, f1.deno, f2.num, f2.deno, pro(f1, f2).num, pro(f1, f2).deno);
 
-	printf("%d / %d\n", pro(f1, f2).num, pro(f1, f2).deno);
+	printf("%d/%d / %d/%d = %d/%d\n", f1.num, f1.deno, f2.num, f2.deno, quo(f1, f2).num, quo(f1, f2).deno);
 
-	printf("%d / %d\n", quo(f1, f2).num, quo(f1, f2).deno);
+	printf("%d/%d + %d/%d = %d/%d\n", f1.num, f1.deno, f2.num, f2.deno, sum(f1, f2).num, sum(f1, f2).deno);
+
+	printf("%d/%d - %d/%d = %d/%d\n", f1.num, f1.deno, f2.num, f2.deno, dif(f1, f2).num, dif(f1, f2).deno);
 
 	/*system("pause");*/
 	return 0;
@@ -49,6 +49,11 @@ struct Fraction_s pro (struct Fraction_s x, struct Fraction_s y)
 
 struct Fraction_s sum (struct Fraction_s x, struct Fraction_s y)
 {
+	x.num = x.num * y.deno + y.num * x.deno;
+
+	x.deno = x.deno * y.deno;
+
+	return x;
 
 }
 
@@ -63,5 +68,9 @@ struct Fraction_s quo (struct Fraction_s x, struct Fraction_s y)
 
 struct Fraction_s dif (struct Fraction_s x, struct Fraction_s y)
 {
+	x.num = x.num * y.deno - y.num * x.deno;
 
+	x.deno = x.deno * y.deno;
+
+	return x;
 }
