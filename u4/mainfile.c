@@ -11,6 +11,7 @@
 #include <stdio.h>    /* Standard Input/ Output  z.B. scanf, printf */
 #include <stdlib.h>   /* Standard-Bibliothek, z.B. für system */
 
+
 char kleinstesZeichen(char c[]);
 char groesstesZeichen(char c[]);
 

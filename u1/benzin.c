@@ -17,6 +17,7 @@
 
 #define STRINGLAENGE 20
 
+
 // Definition der Fahrzeugdatenstruktur
 struct s_AutoDaten
 {

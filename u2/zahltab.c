@@ -12,6 +12,7 @@
 #include <stdio.h>  // Standard Input/ Output  z.B. scanf, printf
 #include <math.h>   // Standard-Bibliothek für math. Funktionen z.B. sqrt
 
+
 // Prototypen der benötigten Funktionen 
 void strich(int n, char c);  // gibt n mal das Zeichen c aus 
 void tabelleAusgeben(const int von, const int bis, const int schritt);

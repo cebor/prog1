@@ -12,4 +12,5 @@ void dreieck(void);
 double deg2rad(double w_deg);
 int round2 (double x);
 
+
 #endif

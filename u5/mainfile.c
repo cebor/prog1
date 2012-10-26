@@ -35,7 +35,7 @@ int main()
 	printf("%d/%d - %d/%d = %d/%d\n", f1.num, f1.deno, f2.num, f2.deno, dif(f1, f2).num, dif(f1, f2).deno);
 
 
-	/*system("pause");*/
+	system("pause");
 	return 0;
 }
 

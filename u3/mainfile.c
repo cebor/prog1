@@ -25,6 +25,7 @@ int main() // Beginn Hauptprogramm          **************************
 	return 0;
 } //***************** Ende Hauptprogramm ***************************
 
+
 // Definition der benötigten Funktionen      
 
 void dreieck(void)
