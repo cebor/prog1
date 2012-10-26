@@ -88,11 +88,11 @@ struct Fraction_s dif (struct Fraction_s x, struct Fraction_s y)
 /*ggt*/
 int gcd (int a, int b)
 {
-		a = abs(a);
-		b = abs(b);
-		if (a%b == 0) return b;
-		if (a < b) return ggt(b, a);
-		else return ggt(b, a%b);
+	a = abs(a);
+	b = abs(b);
+	if (a%b == 0) return b;
+	if (a < b) return ggt(b, a);
+	else return ggt(b, a%b);
 }
 
 /*kürzen*/
