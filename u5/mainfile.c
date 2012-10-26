@@ -39,51 +39,40 @@ int main()
 	return 0;
 }
 
+/*produkt*/
 struct Fraction_s pro (struct Fraction_s x, struct Fraction_s y)
 {
-	int teiler;
-
 	x.num = x.num * y.num;
 	x.deno = x.deno * y.deno;
 
-	teiler = ggt(x.num, x.deno);
-
-	x.num = x.num / teiler;
-	x.deno = x.deno / teiler;
+	x = reduce(x);
 
 	return x;
 }
 
+/*summe*/
 struct Fraction_s sum (struct Fraction_s x, struct Fraction_s y)
 {
-	int teiler;
-
 	x.num = x.num * y.deno + y.num * x.deno;
 	x.deno = x.deno * y.deno;
 
-	teiler = ggt(x.num, x.deno);
-
-	x.num = x.num / teiler;
-	x.deno = x.deno / teiler;
+	x = reduce(x);
 
 	return x;
 }
 
+/*quotient*/
 struct Fraction_s quo (struct Fraction_s x, struct Fraction_s y)
 {
-	int teiler;
-
 	x.num	= x.num  * y.deno;
 	x.deno	= y.num * x.deno;
 
-	teiler = ggt(x.num, x.deno);
-
-	x.num = x.num / teiler;
-	x.deno = x.deno / teiler;
+	x = reduce(x);
 
 	return x;
 }
 
+/*differenz*/
 struct Fraction_s dif (struct Fraction_s x, struct Fraction_s y)
 {
 	int teiler;
@@ -91,19 +80,37 @@ struct Fraction_s dif (struct Fraction_s x, struct Fraction_s y)
 	x.num = x.num * y.deno - y.num * x.deno;
 	x.deno = x.deno * y.deno;
 
-	teiler = ggt(x.num, x.deno);
-
-	x.num = x.num / teiler;
-	x.deno = x.deno / teiler;
+	x = reduce(x);
 
 	return x;
 }
 
-int ggt (int a, int b)
+/*ggt*/
+int gcd (int a, int b)
 {
 		a = abs(a);
 		b = abs(b);
-        if (a%b == 0) return b;
-        if (a < b) return ggt(b, a);
-        else return ggt(b, a%b);
+		if (a%b == 0) return b;
+		if (a < b) return ggt(b, a);
+		else return ggt(b, a%b);
+}
+
+/*kürzen*/
+struct Fraction_s reduce (struct Fraction_s x)
+{
+	int divisor;
+
+	divisor = gcd(x.num, x.deno);
+
+	x.num = x.num / divisor;
+	x.deno = x.deno / divisor;
+
+	/*minus auf eine seite*/
+	if ((x.deno < 0 && x.num > 0) || (x.deno < 0 && x.num < 0))
+	{
+		x.deno *= -1;
+		x.num  *= -1;
+	}
+
+	return x;
 }

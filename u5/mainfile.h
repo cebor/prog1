@@ -16,4 +16,6 @@ struct Fraction_s dif (struct Fraction_s, struct Fraction_s);
 
 int ggt (int, int);
 
+struct Fraction_s reduce (struct Fraction_s);
+
 #endif
