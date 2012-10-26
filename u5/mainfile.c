@@ -9,7 +9,7 @@
 
 /* Einbinden von nötigen Header-Dateien                             */
 #include <stdio.h>    /* Standard Input/ Output  z.B. scanf, printf */
-/*#include <stdlib.h>*/   /* Standard-Bibliothek, z.B. für system       */
+#include <stdlib.h>   /* Standard-Bibliothek, z.B. für system       */
 #include "mainfile.h"
 
 
@@ -34,24 +34,37 @@ int main()
 
 	printf("%d/%d - %d/%d = %d/%d\n", f1.num, f1.deno, f2.num, f2.deno, dif(f1, f2).num, dif(f1, f2).deno);
 
+
 	/*system("pause");*/
 	return 0;
 }
 
 struct Fraction_s pro (struct Fraction_s x, struct Fraction_s y)
 {
-	x.num = x.num * y.num;
+	int teiler;
 
+	x.num = x.num * y.num;
 	x.deno = x.deno * y.deno;
+
+	teiler = ggt(x.num, x.deno);
+
+	x.num = x.num / teiler;
+	x.deno = x.deno / teiler;
 
 	return x;
 }
 
 struct Fraction_s sum (struct Fraction_s x, struct Fraction_s y)
 {
-	x.num = x.num * y.deno + y.num * x.deno;
+	int teiler;
 
+	x.num = x.num * y.deno + y.num * x.deno;
 	x.deno = x.deno * y.deno;
+
+	teiler = ggt(x.num, x.deno);
+
+	x.num = x.num / teiler;
+	x.deno = x.deno / teiler;
 
 	return x;
 
@@ -59,18 +72,39 @@ struct Fraction_s sum (struct Fraction_s x, struct Fraction_s y)
 
 struct Fraction_s quo (struct Fraction_s x, struct Fraction_s y)
 {
-	x.num	= x.num  * y.deno;
+	int teiler;
 
+	x.num	= x.num  * y.deno;
 	x.deno	= y.num * x.deno;
+
+	teiler = ggt(x.num, x.deno);
+
+	x.num = x.num / teiler;
+	x.deno = x.deno / teiler;
 
 	return x;
 }
 
 struct Fraction_s dif (struct Fraction_s x, struct Fraction_s y)
 {
-	x.num = x.num * y.deno - y.num * x.deno;
+	int teiler;
 
+	x.num = x.num * y.deno - y.num * x.deno;
 	x.deno = x.deno * y.deno;
 
+	teiler = ggt(x.num, x.deno);
+
+	x.num = x.num / teiler;
+	x.deno = x.deno / teiler;
+
 	return x;
+}
+
+int ggt (int a, int b)
+{
+		a = abs(a);
+		b = abs(b);
+        if (a%b == 0) return b;
+        if (a < b) return ggt(b, a);
+        else return ggt(b, a%b);
 }
