@@ -1,11 +1,11 @@
 #ifndef _MAINFILE_H_
 #define _MAINFILE_H_
 
-// Struct
+/* Struct */
 struct Fraction_s
 {
-	int num;		// numerator
-	int deno;		// denominator
+	int num;		/* numerator */
+	int deno;		/* denominator */
 };
 
 /* Prototypen der benötigten Funktionen */

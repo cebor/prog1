@@ -17,11 +17,11 @@ int main()
 {
 	struct Fraction_s f1, f2;
 
-	// 1. Bruch
+	/* 1. Bruch */
 	printf("Bitte Zaehler und Nenner Bruch 1 eingeben: ");
 	scanf("%d %d", &f1.num, &f1.deno);
 
-	// 2. Bruch
+	/* 2. Bruch */
 	printf("Bitte Zaehler und Nenner Bruch 2 eingeben: ");
 	scanf("%d %d", &f2.num, &f2.deno);
 
@@ -35,11 +35,11 @@ int main()
 	printf("%d/%d - %d/%d = %d/%d\n", f1.num, f1.deno, f2.num, f2.deno, dif(f1, f2).num, dif(f1, f2).deno);
 
 
-	system("pause");
+	/*system("pause");*/
 	return 0;
 }
 
-/*produkt*/
+/* produkt */
 struct Fraction_s pro (struct Fraction_s x, struct Fraction_s y)
 {
 	x.num = x.num * y.num;
@@ -50,7 +50,7 @@ struct Fraction_s pro (struct Fraction_s x, struct Fraction_s y)
 	return x;
 }
 
-/*summe*/
+/* summe */
 struct Fraction_s sum (struct Fraction_s x, struct Fraction_s y)
 {
 	x.num = x.num * y.deno + y.num * x.deno;
@@ -61,7 +61,7 @@ struct Fraction_s sum (struct Fraction_s x, struct Fraction_s y)
 	return x;
 }
 
-/*quotient*/
+/* quotient */
 struct Fraction_s quo (struct Fraction_s x, struct Fraction_s y)
 {
 	x.num	= x.num  * y.deno;
@@ -72,7 +72,7 @@ struct Fraction_s quo (struct Fraction_s x, struct Fraction_s y)
 	return x;
 }
 
-/*differenz*/
+/* differenz */
 struct Fraction_s dif (struct Fraction_s x, struct Fraction_s y)
 {
 	int teiler;
@@ -85,17 +85,17 @@ struct Fraction_s dif (struct Fraction_s x, struct Fraction_s y)
 	return x;
 }
 
-/*ggt*/
+/* ggt */
 int gcd (int a, int b)
 {
 	a = abs(a);
 	b = abs(b);
 	if (a%b == 0) return b;
-	if (a < b) return ggt(b, a);
-	else return ggt(b, a%b);
+	if (a < b) return gcd(b, a);
+	else return gcd(b, a%b);
 }
 
-/*kürzen*/
+/* kürzen */
 struct Fraction_s reduce (struct Fraction_s x)
 {
 	int divisor;
@@ -105,7 +105,7 @@ struct Fraction_s reduce (struct Fraction_s x)
 	x.num = x.num / divisor;
 	x.deno = x.deno / divisor;
 
-	/*minus auf eine seite*/
+	/* minus auf eine seite */
 	if ((x.deno < 0 && x.num > 0) || (x.deno < 0 && x.num < 0))
 	{
 		x.deno *= -1;
