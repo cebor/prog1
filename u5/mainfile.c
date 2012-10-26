@@ -67,7 +67,6 @@ struct Fraction_s sum (struct Fraction_s x, struct Fraction_s y)
 	x.deno = x.deno / teiler;
 
 	return x;
-
 }
 
 struct Fraction_s quo (struct Fraction_s x, struct Fraction_s y)
