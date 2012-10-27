@@ -42,7 +42,7 @@ int main()
 /* produkt */
 struct Fraction_s pro (struct Fraction_s x, struct Fraction_s y)
 {
-	x.num = x.num * y.num;
+	x.num  = x.num * y.num;
 	x.deno = x.deno * y.deno;
 
 	x = reduce(x);
@@ -53,7 +53,7 @@ struct Fraction_s pro (struct Fraction_s x, struct Fraction_s y)
 /* summe */
 struct Fraction_s sum (struct Fraction_s x, struct Fraction_s y)
 {
-	x.num = x.num * y.deno + y.num * x.deno;
+	x.num  = x.num * y.deno + y.num * x.deno;
 	x.deno = x.deno * y.deno;
 
 	x = reduce(x);
@@ -64,8 +64,8 @@ struct Fraction_s sum (struct Fraction_s x, struct Fraction_s y)
 /* quotient */
 struct Fraction_s quo (struct Fraction_s x, struct Fraction_s y)
 {
-	x.num	= x.num  * y.deno;
-	x.deno	= y.num * x.deno;
+	x.num  = x.num * y.deno;
+	x.deno = y.num * x.deno;
 
 	x = reduce(x);
 
@@ -75,9 +75,7 @@ struct Fraction_s quo (struct Fraction_s x, struct Fraction_s y)
 /* differenz */
 struct Fraction_s dif (struct Fraction_s x, struct Fraction_s y)
 {
-	int teiler;
-
-	x.num = x.num * y.deno - y.num * x.deno;
+	x.num  = x.num * y.deno - y.num * x.deno;
 	x.deno = x.deno * y.deno;
 
 	x = reduce(x);
@@ -102,7 +100,7 @@ struct Fraction_s reduce (struct Fraction_s x)
 
 	divisor = gcd(x.num, x.deno);
 
-	x.num = x.num / divisor;
+	x.num  = x.num / divisor;
 	x.deno = x.deno / divisor;
 
 	/* minus auf eine seite */
