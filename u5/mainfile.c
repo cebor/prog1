@@ -1,9 +1,9 @@
 /*******************************************************************
-/ Programm    : Bruchrechnung                                         
-/ Verfasser   : Schmidt                                           
-/ Datum       : Urprogramm: 24.10.2012                                          
-/ Eingabe     : 2 rationale Zahlen                          
-/ Verarbeitung: diverse Berechnungen                   
+/ Programm    : Bruchrechnung
+/ Verfasser   : Schmidt
+/ Datum       : Urprogramm: 24.10.2012
+/ Eingabe     : 2 rationale Zahlen
+/ Verarbeitung: diverse Berechnungen
 / Änderungen  : 24.10.2012
 / *******************************************************************/
 
@@ -17,13 +17,34 @@ int main()
 {
 	struct Fraction_s f1, f2;
 
+	f1.deno = 1, f2.deno = 1; /* Nenner != 0 setzen */
+
 	/* 1. Bruch */
 	printf("Bitte Zaehler und Nenner Bruch 1 eingeben: ");
-	scanf("%d %d", &f1.num, &f1.deno);
+	do
+	{
+		if (f1.deno == 0)
+		{
+			printf("Bitte Nenner != 0 eingeben: ");
+			scanf("%d", &f1.deno);
+		}
+		else
+			scanf("%d %d", &f1.num, &f1.deno);
+	} while (f1.deno == 0);
+
 
 	/* 2. Bruch */
 	printf("Bitte Zaehler und Nenner Bruch 2 eingeben: ");
-	scanf("%d %d", &f2.num, &f2.deno);
+	do
+	{
+		if (f2.deno == 0)
+		{
+			printf("Bitte Nenner != 0 eingeben: ");
+			scanf("%d", &f2.deno);
+		}
+		else
+			scanf("%d %d", &f2.num, &f2.deno);
+	} while (f2.deno == 0);
 
 
 	printf("%d/%d * %d/%d = %d/%d\n", f1.num, f1.deno, f2.num, f2.deno, pro(f1, f2).num, pro(f1, f2).deno);
@@ -50,22 +71,22 @@ struct Fraction_s pro (struct Fraction_s x, struct Fraction_s y)
 	return x;
 }
 
-/* summe */
-struct Fraction_s sum (struct Fraction_s x, struct Fraction_s y)
+/* quotient */
+struct Fraction_s quo (struct Fraction_s x, struct Fraction_s y)
 {
-	x.num  = x.num * y.deno + y.num * x.deno;
-	x.deno = x.deno * y.deno;
+	x.num  = x.num * y.deno;
+	x.deno = y.num * x.deno;
 
 	x = reduce(x);
 
 	return x;
 }
 
-/* quotient */
-struct Fraction_s quo (struct Fraction_s x, struct Fraction_s y)
+/* summe */
+struct Fraction_s sum (struct Fraction_s x, struct Fraction_s y)
 {
-	x.num  = x.num * y.deno;
-	x.deno = y.num * x.deno;
+	x.num  = x.num * y.deno + y.num * x.deno;
+	x.deno = x.deno * y.deno;
 
 	x = reduce(x);
 
