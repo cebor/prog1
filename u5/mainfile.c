@@ -118,7 +118,7 @@ struct Fraction_s reduce (struct Fraction_s x)
 	x.num  = x.num / divisor;
 	x.deno = x.deno / divisor;
 
-	/* minus auf eine seite bzw. kürzen*/
+	/* minus auf eine seite bzw. kürzen */
 	if ((x.deno < 0 && x.num > 0) || (x.deno < 0 && x.num < 0))
 	{
 		x.deno *= -1;
