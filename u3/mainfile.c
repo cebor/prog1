@@ -8,7 +8,7 @@
 // Änderungen  : 11.10.2012
 //*******************************************************************
 
-// Einbinden von nötigen Header-Dateien                              
+// Einbinden von nötigen Header-Dateien
 #include <stdio.h>    // Standard Input/ Output  z.B. scanf, printf
 #include <stdlib.h>   // Standard-Bibliothek, z.B. für system
 #include <math.h>     // Standard-Bibliothek für math. Funktionen z.B. sqrt
@@ -165,7 +165,8 @@ void strich (int n, char c)
 }
 
 // eigene Round Function
-int round2 (double x) {
+int round2 (double x)
+{
 	int y;
 	x = x + 0.5;
 	y = (int) x;
