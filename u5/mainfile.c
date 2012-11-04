@@ -15,7 +15,7 @@
 
 int main()
 {
-	struct Fraction_s f1, f2;
+	struct Fraction_s f1, f2, product, quotient, summation, difference;
 
 	/* 1. Bruch */
 	do
@@ -25,8 +25,7 @@ int main()
 		scanf("%d %d", &f1.num, &f1.deno);
 
 		if (f1.num == 0 || f1.deno == 0) printf("Bitte Zähle & Nenner != 0 eingeben!\n");
-	}
-	while (f1.num == 0 || f1.deno == 0);
+	} while (f1.num == 0 || f1.deno == 0);
 
 
 	/* 2. Bruch */
@@ -37,17 +36,22 @@ int main()
 		scanf("%d %d", &f2.num, &f2.deno);
 
 		if (f2.num == 0 || f2.deno == 0) printf("Bitte Zähle & Nenner != 0 eingeben!\n");
-	}
-	while (f2.num == 0 || f2.deno == 0);
+	} while (f2.num == 0 || f2.deno == 0);
 
 
-	printf("%d/%d * %d/%d = %d/%d\n", f1.num, f1.deno, f2.num, f2.deno, pro(f1, f2).num, pro(f1, f2).deno);
+	product    = pro(f1, f2);
+	quotient   = quo(f1, f2);
+	summation  = sum(f1, f2);
+	difference = dif(f1, f2);
 
-	printf("%d/%d / %d/%d = %d/%d\n", f1.num, f1.deno, f2.num, f2.deno, quo(f1, f2).num, quo(f1, f2).deno);
 
-	printf("%d/%d + %d/%d = %d/%d\n", f1.num, f1.deno, f2.num, f2.deno, sum(f1, f2).num, sum(f1, f2).deno);
+	printf("%d/%d * %d/%d = %d/%d\n", f1.num, f1.deno, f2.num, f2.deno, product.num, product.deno);
 
-	printf("%d/%d - %d/%d = %d/%d\n", f1.num, f1.deno, f2.num, f2.deno, dif(f1, f2).num, dif(f1, f2).deno);
+	printf("%d/%d / %d/%d = %d/%d\n", f1.num, f1.deno, f2.num, f2.deno, quotient.num, quotient.deno);
+
+	printf("%d/%d + %d/%d = %d/%d\n", f1.num, f1.deno, f2.num, f2.deno, summation.num, summation.deno);
+
+	printf("%d/%d - %d/%d = %d/%d\n", f1.num, f1.deno, f2.num, f2.deno, difference.num, difference.deno);
 
 
 	/*system("pause");*/
@@ -103,7 +107,7 @@ int gcd (int a, int b)
 {
 	a = abs(a);
 	b = abs(b);
-	
+
 	if (a%b == 0)
 		return b;
 	else if (a < b)
