@@ -1,10 +1,10 @@
 /*******************************************************************
-// Programm    : exp1                                                
-// Verfasser   : Feindor/Schmidt                                             
-// Datum       : Urprogramm: 1.10.1996                                           
-// Eingabe     : obere und untere Grenzen                            
-// Verarbeitung: Berechnung von Funktionen, Zählen, Summieren        
-// Ausgabe     : Zahlentabellen                                      
+// Programm    : exp1
+// Verfasser   : Feindor/Schmidt
+// Datum       : Urprogramm: 1.10.1996
+// Eingabe     : obere und untere Grenzen
+// Verarbeitung: Berechnung von Funktionen, Zählen, Summieren
+// Ausgabe     : Zahlentabellen
 // Änderungen  : 30.10.2012
 *******************************************************************/
 
@@ -14,7 +14,7 @@
 #include "exp.h"
 
 
-int main () 
+int main ()
 {
 	int limit;
 
