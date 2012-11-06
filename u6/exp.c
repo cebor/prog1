@@ -73,7 +73,7 @@ void tableOutput (int limit)
 }
 
 /* Fakultät berechnen */
-long int fact (unsigned int n)
+long fact (unsigned int n)
 {
 	if (n <= 1)
 		return 1;

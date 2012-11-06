@@ -6,7 +6,7 @@
 void line (int, char); /* gibt n mal das Zeichen c aus  */
 int limitInput (int);
 void tableOutput (int);
-long int fact (unsigned int);
+long fact (unsigned int);
 double summation (int, int);
 
 

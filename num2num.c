@@ -1,15 +1,15 @@
 #include <stdio.h>
 
-int num2num (unsigned long, int);
+int num2num (unsigned long long, int);
 
 int main(void)
 {
-	long number;
+	long long number;
 	int base;
 
 	printf("Please type a number: ");
 	
-	scanf("%lu", &number);
+	scanf("%llu", &number);
 
 	do
 	{
@@ -26,7 +26,7 @@ int main(void)
 	num2num(number, base);
 }
 
-int num2num (unsigned long n, int b)
+int num2num (unsigned long long n, int b)
 {	
 	char str[255];
 	int rmd[255], i = 0, j = 0;	
