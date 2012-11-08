@@ -1,11 +1,12 @@
 #include <stdio.h>
 
-int num2num (unsigned long long, int);
+void num2num (unsigned long long, int, char *);
 
 int main(void)
 {
 	long long number;
 	int base;
+	char result[255];
 
 	printf("Please type a number: ");
 	
@@ -23,13 +24,14 @@ int main(void)
 
 	printf("Result: ");
 
-	num2num(number, base);
+	num2num(number, base, result);
+
+	printf("%s\n", result);
 }
 
-int num2num (unsigned long long n, int b)
+void num2num (unsigned long long n, int b, char str[])
 {	
-	char str[255];
-	int rmd[255], i = 0, j = 0;	
+	int rmd[255], i = 0, j = 0;
 
 	while (n > 0)
 	{
@@ -60,8 +62,4 @@ int num2num (unsigned long long n, int b)
 	}
 
 	str[j] = '\0';
-
-	printf("%s\n", str);
-
-	return 0;
 }
