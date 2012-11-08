@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void num2num (unsigned long long, int, char *);
+void num2base (unsigned long long, int, char *);
 
 int main(void)
 {
@@ -24,12 +24,12 @@ int main(void)
 
 	printf("Result: ");
 
-	num2num(number, base, result);
+	num2base(number, base, result);
 
 	printf("%s\n", result);
 }
 
-void num2num (unsigned long long n, int b, char str[])
+void num2base (unsigned long long n, int b, char str[])
 {	
 	int rmd[255], i = 0, j = 0;
 
