@@ -18,15 +18,11 @@ void zahlenraten (int MaxZahl)
 
 	do
 	{
-		/* initialize random seed: */
-		srand(time(NULL));
+		rnd = rand() % MaxZahl + 1;  		/* Zufällige Zahl generieren*/
 
-		/* generate random number: */
-		rnd = rand() % MaxZahl + 1;
+		rate(rnd);							/* Starte Ratespiel */
 
-		rate(rnd);
-
-		wdh = nochmal();
+		wdh = nochmal();					/* Nochmal Spielen */
 
 	} while (wdh == TRUE);
 }
@@ -40,8 +36,10 @@ void rate (int compZahl)
 	do
 	{
 		printf("> ");
-		scanf("%d", &n);
+		scanf("%d", &n);					/* Zahl n Einlesen */
 
+
+		/* Zahl n testen */
 		if (n < compZahl)
 			printf("Die ist zu klein!\n");
 		else if (n > compZahl)
@@ -54,28 +52,34 @@ void rate (int compZahl)
 
 int nochmal (void)
 {
-	int rtn;
-	char jn;
+	int rtn;	/* return variable */
+	char jn;	/* ja oder nein variable */
 
 	do
 	{
-		printf("Nochmal spielen? (j/n)\n");
-	
-		scanf(" %c", &jn);
+		printf("Nochmal spielen? (J/n)\n");
 
-		if (jn == 'j' || jn == 'J')
+		printf("> ");
+	
+		while ((jn = getchar()) != '\n' && jn != EOF);
+		jn = getchar();
+
+		if (jn == 'j' || jn == 'J' || jn == '\n')
 			rtn = TRUE;
 		else if (jn == 'n' || jn == 'N')
 			rtn = FALSE;
 		else
+		{
+			printf("Falsche Eingabe!\n");
 			rtn = -1;
-	
+		}
+		
 	} while (rtn == -1);
 	
 	return rtn;
 }
 
-void strich (int n, char c) // gibt n mal das Zeichen c aus
+void strich (int n, char c) /* gibt n mal das Zeichen c aus */
 {
 	int i;
 	for (i=1; i<=n; i++)

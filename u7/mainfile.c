@@ -15,6 +15,8 @@ int main ()
 {
 	const int LIMIT = 100;
 
+	srand(time(NULL));  /* Init Random Seed */
+
 	strich(50,'-');
 	printf("Zahlenraten\n");
 	strich(50,'-');
