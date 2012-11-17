@@ -23,7 +23,7 @@ int main()
 		{"Koppenhagen", "DK", 1700000}
 	};
 
-	output(&towns[2]);  //Hier wird nur ein einziges übergeben: bzw die startaddress ab element 2
+	output(&towns[2]);  //Hier wird nur ein einziges übergeben: bzw die startaddress des element 2
 }
 
 void output(const struct Town_s *towns) {

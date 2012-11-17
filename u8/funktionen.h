@@ -6,8 +6,11 @@
 #define PRIM  1
 
 
-/* Prototypen der benötigten Funktionen */
+/* Prototypen der benÃ¶tigten Funktionen */
 void strich (int n, char c); /* gibt n mal das Zeichen c aus  */
+
+void sieb (int, int *);
+void ausgabe (int, int *);
 
 
 #endif
