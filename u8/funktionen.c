@@ -23,10 +23,10 @@ void sieb (int limit, int array[])
 {
 	int i, j;
 
-	for (i = 2; i <= limit; i++)
+	for (i = 2; i < limit; i++)
 	   if (array[i])
 	   {
-	      for (j = 2 * i; j <= limit; j += i) array[j] = NICHT_PRIM;
+	      for (j = 2 * i; j < limit; j += i) array[j] = NICHT_PRIM;
 	   }
 }
 
