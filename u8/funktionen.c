@@ -25,10 +25,10 @@ void sieb (int limit, int array[])
 
 	for (i = 2; i < limit; i++)
 	{
-		for (j = 2; j < sqrt(i); j++)
+		for (j = 2; j < sqrt(i) + 1; j++)
 		{
-			if ((i + 1) % j != 0)
-				array[i] = PRIM;
+			if ((i + 1) % j == 0)
+				array[i] = NICHT_PRIM;
 		}
 	}
 }

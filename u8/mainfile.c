@@ -13,16 +13,17 @@
 
 #define ARRAY_LIMIT 1000
 
+
 int main () 
 {
 	int primzahlen[ARRAY_LIMIT];
 	int i;
 
-	// // Alle Zahlen ab 2 als Prim makieren
-	// for (i = 1; i < ARRAY_LIMIT; i++)
-	// {
-	// 	primzahlen[i] = PRIM;
-	// }
+	// Alle Zahlen ab 2 als Prim makieren
+	for (i = 1; i < ARRAY_LIMIT; i++)
+	{
+		primzahlen[i] = PRIM;
+	}
 
 	// Aussieben
 	sieb (ARRAY_LIMIT, primzahlen);
