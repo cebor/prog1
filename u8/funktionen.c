@@ -27,8 +27,8 @@ void sieb (int limit, int array[])
 	{
 		for (j = 2; j < sqrt(i); j++)
 		{
-			if ((i + 1) % j == 0)
-				array[i] = NICHT_PRIM;
+			if ((i + 1) % j != 0)
+				array[i] = PRIM;
 		}
 	}
 }
