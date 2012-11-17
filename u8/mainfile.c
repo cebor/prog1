@@ -19,20 +19,20 @@ int main ()
 	int primzahlen[ARRAY_LIMIT];
 	int i;
 
-	// Alle Zahlen ab 2 als Prim makieren
+	/* Alle Zahlen ab 2 als Prim makieren */
 	for (i = 2; i < ARRAY_LIMIT; i++)
 	{
 		primzahlen[i] = PRIM;
 	}
 
-	// Aussieben
+	/* Aussieben */
 	sieb (ARRAY_LIMIT, primzahlen);
 
 	strich(50,'-');
 	printf("Sieb des Eratosthenes\n");
 	strich(50,'-');
 
-	// Output
+	/* Output */
 	ausgabe (ARRAY_LIMIT, primzahlen);
 
 	printf("\nServus! \n");

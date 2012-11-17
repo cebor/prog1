@@ -11,7 +11,7 @@
 #include "funktionen.h"
 
 
-void strich (int n, char c) // gibt n mal das Zeichen c aus
+void strich (int n, char c) /* gibt n mal das Zeichen c aus */
 {
 	int i;
 	for (i = 1; i <= n; i++)
@@ -23,10 +23,10 @@ void sieb (int limit, int array[])
 {
 	int i, j;
 
-	for (i = 2; i < limit; i++)
+	for (i = 2; i <= sqrt(limit) + 1; i++) /* Bis zur Wurzel (+1 wegen falschem abrunden) auf Primzal prüfen. */
 	   if (array[i])
 	   {
-	      for (j = 2 * i; j < limit; j += i) array[j] = NICHT_PRIM;
+	      for (j = 2 * i; j < limit; j += i) array[j] = NICHT_PRIM; /* Alle Vielfachen als Nicht-Primzahl makieren. */
 	   }
 }
 
