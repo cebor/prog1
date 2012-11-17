@@ -23,14 +23,11 @@ void sieb (int limit, int array[])
 {
 	int i, j;
 
-	for (i = 2; i < limit; i++)
-	{
-		for (j = 2; j < sqrt(i) + 1; j++)
-		{
-			if ((i + 1) % j == 0)
-				array[i] = NICHT_PRIM;
-		}
-	}
+	for (i = 2; i <= limit; i++)
+	   if (array[i])
+	   {
+	      for (j= 2 * i; j <= limit; j += i) array[j]=NICHT_PRIM;
+	   }
 }
 
 void ausgabe (int limit, int array[])
@@ -40,6 +37,6 @@ void ausgabe (int limit, int array[])
 	for (i = 0; i < limit; i++)
 	{
 		if (array[i] == 1)
-			printf("%d, ", (i + 1));
+			printf("%d, ", i);
 	}
 }

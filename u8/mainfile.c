@@ -20,7 +20,7 @@ int main ()
 	int i;
 
 	// Alle Zahlen ab 2 als Prim makieren
-	for (i = 1; i < ARRAY_LIMIT; i++)
+	for (i = 2; i < ARRAY_LIMIT; i++)
 	{
 		primzahlen[i] = PRIM;
 	}
@@ -32,6 +32,7 @@ int main ()
 	printf("Sieb des Eratosthenes\n");
 	strich(50,'-');
 
+	// Output
 	ausgabe (ARRAY_LIMIT, primzahlen);
 
 	printf("\nServus! \n");
