@@ -23,7 +23,7 @@ void sieb (int limit, int array[])
 {
 	int i, j;
 
-	for (i = 2; i <= sqrt(limit) + 1; i++) /* Bis zur Wurzel (+1 wegen falschem abrunden) auf Primzal prüfen. */
+	for (i = 2; i <= sqrt(limit); i++) /* Bis zur Wurzel auf Primzal prüfen. */
 	   if (array[i])
 	   {
 	      for (j = 2 * i; j < limit; j += i) array[j] = NICHT_PRIM; /* Alle Vielfachen als Nicht-Primzahl makieren. */
