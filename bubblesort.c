@@ -7,7 +7,7 @@ void bubblesort(int *array, int length);
 int main()
 {
 	int feld[] = {1, 2, 10, 5, 3, 2, 8};
-	int anzEl = sizeof(feld) / 4;
+	int anzEl = sizeof(feld) / sizeof(int);
 	int i;
 
 	bubblesort(feld, anzEl);
