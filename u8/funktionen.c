@@ -25,14 +25,14 @@ void sieb (int limit, int array[])
 
 	for (i = 2; i <= sqrt((float)limit); i++) /* Bis zur Wurzel auf Primzahl prüfen. */
 		if (array[i] == PRIM)
-			for (j = 2 * i; j < limit; j += i) array[j] = NICHT_PRIM; /* Alle Vielfachen als Nicht-Primzahl makieren. */
+			for (j = 2 * i; j <= limit; j += i) array[j] = NICHT_PRIM; /* Alle Vielfachen als Nicht-Primzahl makieren. */
 }
 
 void ausgabe (int limit, int array[])
 {
 	int i;
 
-	for (i = 0; i < limit; i++)
+	for (i = 0; i <= limit; i++)
 		if (array[i] == PRIM)
 			printf("%d, ", i);
 }
