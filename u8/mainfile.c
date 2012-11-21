@@ -15,24 +15,17 @@
 
 int main () 
 {
-	int primzahlen[ARRAY_LIMIT + 1] = {NICHT_PRIM, NICHT_PRIM}; /* 0 und 1 als NICHT_PRIMT makieren */
-	int i;
-
-	/* Alle Zahlen ab 2 als PRIM makieren */
-	for (i = 2; i <= ARRAY_LIMIT; i++)
-	{
-		primzahlen[i] = PRIM;
-	}
+	int primzahlen[ARRAY_LIMIT + 1];
 
 	/* Aussieben */
-	sieb (ARRAY_LIMIT, primzahlen);
+	sieb (ARRAY_LIMIT + 1, primzahlen);
 
 	strich(50,'-');
 	printf("Sieb des Eratosthenes\n");
 	strich(50,'-');
 
 	/* Output */
-	ausgabe (ARRAY_LIMIT, primzahlen);
+	ausgabe (ARRAY_LIMIT + 1, primzahlen);
 
 	printf("\nServus! \n");
 	/*system("pause");*/
