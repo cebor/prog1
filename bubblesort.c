@@ -22,7 +22,7 @@ int main()
 
 void bubblesort(int *array, int length)
 {
-	int i, j, tmp;
+	int i, j;
 
 	for (i = 0; i < length - 1; ++i)
 	{
@@ -30,7 +30,7 @@ void bubblesort(int *array, int length)
 		{
 			if (array[j] > array[j + 1])
 			{
-				tmp = array[j];
+				int tmp = array[j];
 				array[j] = array[j + 1];
 				array[j + 1] = tmp;
 			}
