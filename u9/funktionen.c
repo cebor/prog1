@@ -35,8 +35,9 @@ int dtoi (const char c)
 {
 	char str[2];
 
+	 // "int atoi ( const char * str );" benötigt das '\0' !!
 	str[0] = c;
-	str[1] = '\0';									// "int atoi ( const char * str );" benötigt das '\0' !!
+	str[1] = '\0';
 
 	return atoi(str);
 } 
@@ -46,9 +47,11 @@ int digitsum (const char * str)
 {
 	int i, dsum;
 
-	dsum = (int) str[0];							// erster buchstabe direkt den ascii-wert übernehmen
+	// erster buchstabe direkt den ascii-wert übernehmen
+	dsum = (int) str[0];
 
-	for (i = 1; str[i] != 0 && i <= 12; i++)		// schleife: aufaddierung der zahlen (bis zum '\0')
+	// schleife: aufaddierung der zahlen (bis zum '\0')
+	for (i = 1; str[i] != 0 && i <= 12; i++)
 	{
  		dsum += dtoi(str[i]);
 	}
@@ -59,10 +62,13 @@ int digitsum (const char * str)
 // EuroTest
 t_errcode eurotest (const char * str)
 {
+	// error auf ok setzen
 	t_errcode err = ec_ok;
 
+	// string länge
 	size_t ln = strlen(str);
 
+	// testen
 	if (ln < 12)
 		err = ec_zukurz;
 	else if (ln > 12)
@@ -85,15 +91,19 @@ void input (char * str)
 	do
 	{
 		printf("Bitte gib eine eu-s/n ein: ");
+
+		// s/n einlesen
 		fgets(str, 255, stdin);
 
-		// Entferne das mit eingelesene '\n'
+		// entferne das mit eingelesene und sinnfreie '\n'
 		size_t ln = strlen(str) - 1;
 		if (str[ln] == '\n')
 			str[ln] = '\0';
 
+		// error-variable
 		err = eurotest(str);
 
+		// testen
 		if (err == 1)
 			printf("Ungültige s/n!\n");
 		else if (err == 2)
