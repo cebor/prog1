@@ -3,12 +3,12 @@
 // Verfasser   : Schmidt                                             
 // Datum       : Urprogramm: 7.11.2012                                           
 // Aufgabe     : Benutzer muss Zahl zwischen 1 und 100 erraten
-// Änderungen  : 7.11.2012
+// Ã„nderungen  : 7.11.2012
 *******************************************************************/
 #include <stdio.h>  /* Standard Input/Output  z.B. scanf, printf */
 #include "funktionen.h"
 
-/* globale Konstanten für boolesche Ausdrücke */
+/* globale Konstanten fÃ¼r boolesche AusdrÃ¼cke */
 const int FALSE = 0;
 const int TRUE = 1;
 
@@ -18,7 +18,7 @@ void zahlenraten (int MaxZahl)
 
 	do
 	{
-		rnd = rand() % MaxZahl + 1;  		/* Zufällige Zahl generieren*/
+		rnd = rand() % MaxZahl + 1;  		/* ZufÃ¤llige Zahl generieren*/
 
 		rate(rnd);							/* Starte Ratespiel */
 

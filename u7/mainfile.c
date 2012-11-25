@@ -3,11 +3,11 @@
 // Verfasser   : Schmidt                                             
 // Datum       : Urprogramm: 7.11.2012                                           
 // Aufgabe     : Benutzer muss Zahl zwischen 1 und 100 erraten
-// Änderungen  : 7.11.2012
+// Ã„nderungen  : 7.11.2012
 *******************************************************************/
 
 #include <stdio.h>  /* Standard Input/Output  z.B. scanf, printf */
-#include <stdlib.h>   /* Standard-Bibliothek, z.B. für system       */
+#include <stdlib.h>   /* Standard-Bibliothek, z.B. fÃ¼r system       */
 #include <time.h>
 #include "funktionen.h"
 

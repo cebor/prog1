@@ -1,16 +1,17 @@
 #ifndef _MAINFILE_H_
 #define _MAINFILE_H_
 
-/* Deklarationen für Übung "Dreieck" */
+/* Deklarationen fÃ¼r Ãœbung "Dreieck" */
 
 // Konstanten
 const double PI = 3.14159265358979323846;
 
-// Prototypen der benötigten Funktionen 
+// Prototypen der benÃ¶tigten Funktionen 
 void strich(int n, char c);
 void dreieck(void);
 double deg2rad(double w_deg);
 int round2 (double x);
+
 
 
 #endif

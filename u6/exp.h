@@ -1,7 +1,7 @@
 #ifndef _EXP_H_
 #define _EXP_H_
 
-/* Prototypen der benötigten Funktionen */
+/* Prototypen der benÃ¶tigten Funktionen */
 
 void line (int, char); /* gibt n mal das Zeichen c aus  */
 int limitInput (int);

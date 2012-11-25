@@ -1,19 +1,19 @@
 //*******************************************************************
 // Programm    : BENZIN                                                            
 // Verfasser   : Feindor/Schmidt
-// Übungsbeispiel für:
+// Ãœbungsbeispiel fÃ¼r:
 //               Programmaufbau, Typen, Konstanten, Variablen,
 //               Bildschirm-Ein-/Ausgabe, Wertzuweisung, if              
 // Datum       : Urprogramm: 1.10.1996
 // Eingabe     : Kilometerzahl, Benzinverbrauch  in Liter               
 // Verarbeitung: Berechnung des Durchschnittsverbrauchs          
 // Ausgabe     : Verbrauch                                                         
-// Änderungen  : 23.09.2012
+// Ã„nderungen  : 23.09.2012
 //*******************************************************************
 
-// Einbinden von nötigen Header-Dateien                                     
+// Einbinden von nÃ¶tigen Header-Dateien                                     
 #include <stdio.h>  // Standard Input/ Output  z.B. scanf, printf
-#include <stdlib.h> // Standard-Bibliothek, z.B. für system
+#include <stdlib.h> // Standard-Bibliothek, z.B. fÃ¼r system
 
 #define STRINGLAENGE 20
 
@@ -42,7 +42,7 @@ int main(void) // Beginn Hauptprogramm          **************************
 
 
 	//************************ Anweisungsteil  ****************************
-	// Dialogeröffnung 
+	// DialogerÃ¶ffnung 
 
 	printf ("BENZIN: Programm zum Kennenlernen\n");
 	printf ("---------------------------------\n");
@@ -104,7 +104,7 @@ float verarbeitung(const struct s_AutoDaten daten)
 	return verbrauch;
 }
 
-// Ausgabe des Verbrauchs und Test auf Plausibilität
+// Ausgabe des Verbrauchs und Test auf PlausibilitÃ¤t
 void ausgabe(const float verbrauch, const char name[])
 {
 	const float untergrenze = 0.03, obergrenze = 0.1;

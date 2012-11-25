@@ -1,11 +1,11 @@
 #ifndef _ZR_H_
 #define _ZR_H_
 
-/* Deklaration globale Konstanten für boolesche Ausdrücke */
+/* Deklaration globale Konstanten fÃ¼r boolesche AusdrÃ¼cke */
 extern const int FALSE;
 extern const int TRUE;
 
-/* Prototypen der benötigten Funktionen */
+/* Prototypen der benÃ¶tigten Funktionen */
 void strich (int n, char c); /* gibt n mal das Zeichen c aus  */
 
 void zahlenraten (int);

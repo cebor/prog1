@@ -5,15 +5,15 @@
 // Eingabe     : obere und untere Grenzen                            
 // Verarbeitung: Berechnung von Standardfunktionen                   
 // Ausgabe     : Zahlentabellen                                      
-// Änderungen  : 03.10.2012
+// ?nderungen  : 03.10.2012
 //*******************************************************************
 
-// Einbinden von nötigen Header-Dateien                              
+// Einbinden von n?tigen Header-Dateien                              
 #include <stdio.h>  // Standard Input/ Output  z.B. scanf, printf
-#include <math.h>   // Standard-Bibliothek für math. Funktionen z.B. sqrt
+#include <math.h>   // Standard-Bibliothek f?r math. Funktionen z.B. sqrt
 
 
-// Prototypen der benötigten Funktionen 
+// Prototypen der ben?tigten Funktionen 
 void strich(int n, char c);  // gibt n mal das Zeichen c aus 
 void tabelleAusgeben(const int von, const int bis, const int schritt);
 int untereGrenzeEinlesen(void);
@@ -25,7 +25,7 @@ int main() // Beginn Hauptprogramm          **************************
 	int von, bis, schritt;
 
 	//************************ Anweisungsteil  ****************************
-	// Dialogeröffnung 
+	// Dialoger?ffnung 
 	strich(50,'-');
 	printf ("Zahltab: Berechnung von Zahlentafeln\n");
 	strich(50,'-');
@@ -45,7 +45,7 @@ int main() // Beginn Hauptprogramm          **************************
 } //***************** Ende Hauptprogramm ***************************
 
 
-// Definition der benötigten Funktionen      
+// Definition der ben?tigten Funktionen      
 
 // gibt n mal das Zeichen c aus 
 void strich (int n, char c) 
@@ -56,13 +56,13 @@ void strich (int n, char c)
 	printf("\n");
 }
 
-// Einlesen und prüfen der Tabellengrenzen
+// Einlesen und pr?fen der Tabellengrenzen
 
 // Untergrenze
 int untereGrenzeEinlesen(void)
 {
 	int ug;
-	do // Einlesen untere Grenze und prüfen
+	do // Einlesen untere Grenze und pr?fen
 	{
 		printf ("Bitte positive untere Grenze eingeben:  ");
 		scanf  ("%d", &ug);
@@ -73,12 +73,12 @@ int untereGrenzeEinlesen(void)
 }
 
 // Obergrenze
-// Übergebener Parameter ug: vorher eingelesene Untergrenze
+// ?bergebener Parameter ug: vorher eingelesene Untergrenze
 int obereGrenzeEinlesen(int ug)
 {
 	int og;
 
-	do // Einlesen obere Grenze und prüfen
+	do // Einlesen obere Grenze und pr?fen
 	{
 		printf ("Bitte obere Grenze eingeben:  ");
 		scanf  ("%d", &og);

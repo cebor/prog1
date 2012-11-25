@@ -3,11 +3,11 @@
 // Verfasser   : Schmidt                                             
 // Datum       : Urprogramm: 13.11.2012                                           
 // Aufgabe     : Primzahlberechnung nach Sieb des Eratosthenes
-// Änderungen  : 13.11.2012
+// ?nderungen  : 13.11.2012
 *******************************************************************/
 
 #include <stdio.h>  /* Standard Input/Output  z.B. scanf, printf */
-#include <stdlib.h>   /* Standard-Bibliothek, z.B. für system       */
+#include <stdlib.h>   /* Standard-Bibliothek, z.B. f?r system       */
 #include "funktionen.h"
 
 #define ARRAY_LIMIT 1000

@@ -3,14 +3,14 @@
 // Verfasser   : Feindor/Schmidt
 // Datum       : Urprogramm: 1.10.1996
 // Eingabe     : obere und untere Grenzen
-// Verarbeitung: Berechnung von Funktionen, Zählen, Summieren
+// Verarbeitung: Berechnung von Funktionen, ZÃ¤hlen, Summieren
 // Ausgabe     : Zahlentabellen
-// Änderungen  : 30.10.2012
+// Ã„nderungen  : 30.10.2012
 *******************************************************************/
 
 #include <stdio.h>  /* Standard Input/Output  z.B. scanf, printf */
-#include <math.h>   /* Standard-Bibliothek für math. Funktionen  z.B. sqrt */
-#include <stdlib.h>   /* Standard-Bibliothek, z.B. für system       */
+#include <math.h>   /* Standard-Bibliothek fÃ¼r math. Funktionen  z.B. sqrt */
+#include <stdlib.h>   /* Standard-Bibliothek, z.B. fÃ¼r system       */
 #include "exp.h"
 
 
@@ -72,7 +72,7 @@ void tableOutput (int limit)
 	}
 }
 
-/* Fakultät berechnen */
+/* FakultÃ¤t berechnen */
 long fact (unsigned int n)
 {
 	if (n <= 1)

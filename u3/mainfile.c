@@ -5,13 +5,13 @@
 // Eingabe     : Seite + Winkel eines rechtwinkligen Dreiecks                            
 // Verarbeitung: Berechnung aller Seiten und Winkel                   
 // Ausgabe     : Ergebnis als Tabelle
-// Änderungen  : 11.10.2012
+// Ã„nderungen  : 11.10.2012
 //*******************************************************************
 
-// Einbinden von nötigen Header-Dateien
+// Einbinden von nÃ¶tigen Header-Dateien
 #include <stdio.h>    // Standard Input/ Output  z.B. scanf, printf
-#include <stdlib.h>   // Standard-Bibliothek, z.B. für system
-#include <math.h>     // Standard-Bibliothek für math. Funktionen z.B. sqrt
+#include <stdlib.h>   // Standard-Bibliothek, z.B. fÃ¼r system
+#include <math.h>     // Standard-Bibliothek fÃ¼r math. Funktionen z.B. sqrt
 #include <ctype.h>
 #include "mainfile.h" // eigene Header-Datei mit Funktionsprototypen
 
@@ -26,11 +26,11 @@ int main() // Beginn Hauptprogramm          **************************
 } //***************** Ende Hauptprogramm ***************************
 
 
-// Definition der benötigten Funktionen      
+// Definition der benÃ¶tigten Funktionen      
 
 void dreieck(void)
 {
-	double a;  // Seitenlänge von Seite a
+	double a;  // SeitenlÃ¤nge von Seite a
 	double alpha_deg;  // Winkel in Grad
 	double b;
 	double beta_deg;
@@ -44,7 +44,7 @@ void dreieck(void)
 	// Error Var
 	int err;
 
-	// Dialogeröffnung 
+	// DialogerÃ¶ffnung 
 	strich(50,'-');
 	printf ("Rechtwinkliges Dreieck\n");
 	strich(50,'-');
@@ -111,17 +111,17 @@ void dreieck(void)
 
 	// speichern aller Ergebnisse in einer neuen Variablen
 
-	// abrunden aller Seiten auf die nächste ganze Zahl
+	// abrunden aller Seiten auf die nÃ¤chste ganze Zahl
 	a_floor = floor(a);
 	b_floor = floor(b);
 	c_floor = floor(c);
 
-	// aufrunden aller Seiten auf die nächste ganze Zahl
+	// aufrunden aller Seiten auf die nÃ¤chste ganze Zahl
 	a_ceil = ceil(a);
 	b_ceil = ceil(b);
 	c_ceil = ceil(c);
 
-	// (korrektes) runden aller Seiten auf die nächste ganze Zahl
+	// (korrektes) runden aller Seiten auf die nÃ¤chste ganze Zahl
 	a_round = round2(a);
 	b_round = round2(b);
 	c_round = round2(c);

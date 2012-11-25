@@ -8,7 +8,7 @@ struct Fraction_s
 	int deno;		/* denominator */
 };
 
-/* Prototypen der benötigten Funktionen */
+/* Prototypen der benÃ¶tigten Funktionen */
 struct Fraction_s pro (struct Fraction_s, struct Fraction_s);
 struct Fraction_s sum (struct Fraction_s, struct Fraction_s);
 struct Fraction_s quo (struct Fraction_s, struct Fraction_s);
