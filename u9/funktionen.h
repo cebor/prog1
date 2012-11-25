@@ -18,8 +18,12 @@ typedef enum
 
 /* Prototypen der benötigten Funktionen */
 void strich (int n, char c); /* gibt n mal das Zeichen c aus  */
-int digitsum (const char *);
-int dtoi (const char);
+int incdigits (const char * str);
+int digitsum (const char * str);
+int dtoi (const char c);
+t_errcode eurotest (const char * str);
+
+void input (char * str);
 
 
 #endif

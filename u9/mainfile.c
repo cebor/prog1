@@ -8,15 +8,18 @@
 
 #include <stdio.h>  /* Standard Input/Output  z.B. scanf, printf */
 #include <stdlib.h>   /* Standard-Bibliothek, z.B. für system       */
+#include <ctype.h>
 #include "funktionen.h"
 
 
 int main ()
 {
+	char sn[255];
+	
 	/*
 	TESTPROGRAMM Aufgabe 1b.
 	int i;
-	char *sn[6] = {"P12548786554", "A96412454878", "G21546326946", "F78421545466"};
+	char *sn[] = {"P02571225193", "A96412454878", "G21546326946", "F78421545466"};
 	for (i = 0; i <= 3; i++)
 	{
 		printf("s/n: %s\n", sn[i]);
@@ -24,11 +27,11 @@ int main ()
 	}
 	*/
 
-
-
 	strich(50,'-');
 	printf("Eurotest\n");
 	strich(50,'-');
+
+	input(sn); // eine sn einlesen und prüfen
 
 	printf("\nServus! \n");
 	/*system("pause");*/
