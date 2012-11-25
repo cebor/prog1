@@ -13,5 +13,4 @@ void sieb (int, int *);
 void ausgabe (int, int *);
 
 
-
 #endif
