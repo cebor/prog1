@@ -11,10 +11,12 @@
 #include <ctype.h>
 #include "funktionen.h"
 
+#define LEN 255
+
 
 int main ()
 {
-	char sn[255];
+	char sn[LEN];
 	
 	/*
 	TESTPROGRAMM Aufgabe 1b.
@@ -31,7 +33,7 @@ int main ()
 	printf("Eurotest\n");
 	strich(50,'-');
 
-	input(sn); // eine sn einlesen und prüfen
+	input(sn, LEN); // eine sn einlesen und prüfen
 
 	printf("\nServus! \n");
 	/*system("pause");*/

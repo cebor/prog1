@@ -36,7 +36,7 @@ void rate (int compZahl)
 	do
 	{
 		printf("> ");
-		scanf("%d", &n);					/* Zahl n Einlesen */
+		scanf("%3d", &n);					/* Zahl n Einlesen */
 
 
 		/* Zahl n testen */

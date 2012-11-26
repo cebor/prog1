@@ -51,7 +51,7 @@ int digitsum (const char * str)
 	dsum = (int) str[0];
 
 	// schleife: aufaddierung der zahlen (bis zum '\0')
-	for (i = 1; str[i] != 0 && i <= 12; i++)
+	for (i = 1; str[i] != 0; i++)
 	{
  		dsum += dtoi(str[i]);
 	}
@@ -84,16 +84,16 @@ t_errcode eurotest (const char * str)
 }
 
 // Eine s/n einlesen und prüfen!
-void input (char * str)
+void input (char * str, int length)
 {
 	t_errcode err;
 
 	do
 	{
-		printf("Bitte gib eine eu-s/n ein: ");
+		printf("Bitte gib eine euro-s/n ein: ");
 
 		// s/n einlesen
-		fgets(str, 255, stdin);
+		fgets(str, length, stdin);
 
 		// entferne das mit eingelesene und sinnfreie '\n'
 		size_t ln = strlen(str) - 1;
@@ -118,4 +118,5 @@ void input (char * str)
 			printf("%s - OK\n", str);
 
 	} while (err != ec_ok);
+
 }

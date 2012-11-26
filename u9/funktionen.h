@@ -23,7 +23,7 @@ int digitsum (const char * str);
 int dtoi (const char c);
 t_errcode eurotest (const char * str);
 
-void input (char * str);
+void input (char * str, int);
 
 
 #endif
