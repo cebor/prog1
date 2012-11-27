@@ -20,8 +20,8 @@ void strich (int n, char c) 					// gibt n mal das Zeichen c aus
 	printf("\n");
 }
 
-// IncludesNonDigit: String auf Ziffern testen
-int incdigits (const char * str)
+// IsDigitString: String auf Ziffern testen
+int isdstr (const char * str)
 {
 	int i;
 	for (i = 0; str[i] != 0; i++)
@@ -29,18 +29,6 @@ int incdigits (const char * str)
 			return 0;
 	return 1;
 }
-
-// CHAR Digit >> INT
-int dtoi (const char c)
-{
-	char str[2];
-
-	 // "int atoi ( const char * str );" benötigt das '\0' !!
-	str[0] = c;
-	str[1] = '\0';
-
-	return atoi(str);
-} 
 
 // Quersumme
 int digitsum (const char * str)
@@ -52,10 +40,7 @@ int digitsum (const char * str)
 
 	// schleife: aufaddierung der zahlen (bis zum '\0')
 	for (i = 1; str[i] != 0; i++)
-	{
- 		dsum += dtoi(str[i]);
- 		// dsum += (int) (str[i] - '0');
-	}
+ 		dsum += (int) (str[i] - '0');
 
 	return dsum;
 }
@@ -64,7 +49,7 @@ int digitsum (const char * str)
 t_errcode eurotest (const char * str)
 {
 	// error auf ok setzen
-	t_errcode err = ec_ok;
+	t_errcode err;
 
 	// string länge
 	size_t ln = strlen(str);
@@ -72,32 +57,41 @@ t_errcode eurotest (const char * str)
 	// testen
 	if (ln < 12)
 		err = ec_zukurz;
+
 	else if (ln > 12)
 		err = ec_zulang;
+
 	else if (!isupper(str[0]))
 		err = ec_LCfalsch;
-	else if (!incdigits(&str[1]))
+
+	else if (!isdstr(&str[1]))
 		err = ec_SNkeineZiffer;
-	else if ((digitsum(str) % 9) != 0)
+
+	else if (digitsum(str) % 9 != 0)
 		err = ec_pz_falsch;
+
+	else
+		err = ec_ok;
 
 	return err;
 }
 
 // Eine s/n einlesen und prüfen!
-void input (char * str, int length)
+void input (char * str, int ln_max)
 {
 	t_errcode err;
 
 	do
 	{
+		size_t ln;
+
 		printf("Bitte gib eine euro-s/n ein: ");
 
 		// s/n einlesen
-		fgets(str, length, stdin);
+		fgets(str, ln_max, stdin);
 
 		// entferne das mit eingelesene und sinnfreie '\n'
-		size_t ln = strlen(str) - 1;
+		ln = strlen(str) - 1;
 		if (str[ln] == '\n')
 			str[ln] = '\0';
 
@@ -107,14 +101,19 @@ void input (char * str, int length)
 		// testen
 		if (err == 1)
 			printf("Ungültige s/n!\n");
+
 		else if (err == 2)
 			printf("s/n zu kurz!\n");
+
 		else if (err == 3)
 			printf("s/n zu lang!\n");
+
 		else if (err == 4)
 			printf("Falscher Ländercode!\n");
+
 		else if (err == 5)
 			printf("Ungültige Zeichen in der s/n!\n");
+
 		else
 			printf("%s - OK\n", str);
 
