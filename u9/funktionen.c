@@ -54,6 +54,7 @@ int digitsum (const char * str)
 	for (i = 1; str[i] != 0; i++)
 	{
  		dsum += dtoi(str[i]);
+ 		// dsum += (int) (str[i] - '0');
 	}
 
 	return dsum;
