@@ -99,23 +99,29 @@ void input (char * str, int ln_max)
 		err = eurotest(str);
 
 		// testen
-		if (err == 1)
-			printf("Ungültige s/n!\n");
-
-		else if (err == 2)
-			printf("s/n zu kurz!\n");
-
-		else if (err == 3)
-			printf("s/n zu lang!\n");
-
-		else if (err == 4)
-			printf("Falscher Ländercode!\n");
-
-		else if (err == 5)
-			printf("Ungültige Zeichen in der s/n!\n");
-
-		else
-			printf("%s - OK\n", str);
+		switch (err)
+		{
+			case ec_ok:
+				printf("%s - OK\n", str);
+				break;
+			case  ec_pz_falsch:
+				printf("Ungültige s/n!\n");
+				break;
+			case ec_zukurz:
+				printf("s/n zu kurz!\n");
+				break;
+			case ec_zulang:
+				printf("s/n zu lang!\n");
+				break;
+			case ec_LCfalsch:
+				printf("Falscher Ländercode!\n");
+				break;
+			case ec_SNkeineZiffer:
+				printf("Ungültige Zeichen in der s/n!\n");
+				break;
+			default:
+				printf("error!\n");
+		}
 
 	} while (err != ec_ok);
 
