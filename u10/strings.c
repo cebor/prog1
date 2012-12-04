@@ -14,6 +14,7 @@ void deleteText (char *text[], const int n);
 
 int main (int argc, char *argv[]) 
 {
+	// zu aufgabe 2 (Speicherallozierung)
 	int i;
 	char **array;
 	// speicher allozierung: pointers auf strings
@@ -34,8 +35,8 @@ int main (int argc, char *argv[])
 		strcpy(array[i-1], argv[i]);
 	}
 
-	pstrcpy(array, argv, argc);
 
+	// Aufgabe 1
 	line(23, '-');
 	printf("Statistik Kommandozeile\n");
 	line(23, '-');
@@ -47,6 +48,7 @@ int main (int argc, char *argv[])
 	printf("\n");
 
 
+	// Aufgabe 2
 	line(23, '-');
 	printf("Aufgabe 2\n");
 	line(23, '-');
