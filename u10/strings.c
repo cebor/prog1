@@ -41,6 +41,12 @@ int main (int argc, char *argv[])
 	printf("Statistik Kommandozeile\n");
 	line(23, '-');
 
+	printf("\n");
+
+	printText(argv, argc);
+
+	printf("\n");
+
 	printf("Anzahl der Buchstaben der Parameter:\n");
 	printAsciiFreq(argv, argc);
 
