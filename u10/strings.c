@@ -7,6 +7,9 @@
 void line (int n, char c);
 void printAsciiFreq (char *text[], const int n);
 
+void stats (int argc, char *argv[]);
+void reverse (int argc, char *argv[]);
+
 void printText (char *text[], const int n);
 void textReverse (char *text[], const int n);
 void deleteText (char *text[], const int n);
@@ -14,7 +17,45 @@ void deleteText (char *text[], const int n);
 
 int main (int argc, char *argv[]) 
 {
-	// zu aufgabe 2 (Speicherallozierung)
+	// Aufgabe 1
+	stats(argc, argv);
+
+	// Aufgabe 2
+	reverse(argc, argv);
+
+	return 0;
+}
+
+void line (int n, char c) 					// gibt n mal das Zeichen c aus
+{
+	int i;
+	for (i = 1; i <= n; i++)
+		printf("%c", c);
+	printf("\n");
+}
+
+
+void stats (int argc, char *argv[])
+{
+	line(23, '-');
+	printf("Statistik Kommandozeile\n");
+	line(23, '-');
+
+	printf("\n");
+
+	printText(argv, argc);
+
+	printf("\n");
+
+	printf("Anzahl der Buchstaben der Parameter:\n");
+	printAsciiFreq(argv, argc);
+
+	printf("\n");
+	printf("\n");
+}
+
+void reverse (int argc, char *argv[])
+{
 	int i;
 	char **array;
 	// speicher allozierung: pointers auf strings
@@ -35,26 +76,6 @@ int main (int argc, char *argv[])
 		strcpy(array[i-1], argv[i]);
 	}
 
-
-	// Aufgabe 1
-	line(23, '-');
-	printf("Statistik Kommandozeile\n");
-	line(23, '-');
-
-	printf("\n");
-
-	printText(argv, argc);
-
-	printf("\n");
-
-	printf("Anzahl der Buchstaben der Parameter:\n");
-	printAsciiFreq(argv, argc);
-
-	printf("\n");
-	printf("\n");
-
-
-	// Aufgabe 2
 	line(23, '-');
 	printf("Aufgabe 2\n");
 	line(23, '-');
@@ -68,16 +89,6 @@ int main (int argc, char *argv[])
 	deleteText(array, argc - 1);
 
 	free(array);
-
-	return 0;
-}
-
-void line (int n, char c) 					// gibt n mal das Zeichen c aus
-{
-	int i;
-	for (i = 1; i <= n; i++)
-		printf("%c", c);
-	printf("\n");
 }
 
 void printAsciiFreq (char *text[], const int n)
