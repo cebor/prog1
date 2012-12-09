@@ -2,13 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct point_s {
+typedef struct {
 	float x;
 	float y;
 } point_t;
 
 
-int main ()
+int main (int argc, char **argv)
 {
 	point_t *abc = malloc(sizeof(point_t));;
 
