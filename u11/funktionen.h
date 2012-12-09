@@ -36,7 +36,10 @@ typedef struct
 /* Prototypen der benötigten Funktionen */
 void strich (int n, char c); /* gibt n mal das Zeichen c aus  */
 
-void calcPolygons(polygon_t data[], mainParameters_t params);
-void outputPolygons(polygon_t data[], int n_Lines);
+void calcPolygons(polygon_t *data, mainParameters_t params);
+void outputPolygons(polygon_t *data, int n_Lines);
+cl_errors_t scanCommandLine(int argc, char **argv, mainParameters_t *params);
+void printCLError(cl_errors_t err);
+void usage();
 
 #endif

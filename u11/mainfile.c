@@ -12,14 +12,17 @@
 
 int main (int argc, char **argv)    
 {
-	mainParameters_t params;
+	mainParameters_t params ;
 	polygon_t *polygons;
 
-	params.min = 3;
-	params.max = 200;
-	params.radius = 3.2;
+	params.min = 0;
+	params.max = 0;
+	params.radius = 0;
 
-	polygons = malloc(sizeof(polygon_t) * (params.max - params.min));
+	printCLError(scanCommandLine(argc, argv, &params));
+
+	polygons = malloc(sizeof(polygon_t) * (params.max - params.min + 1));
+	if (polygons == NULL) exit(0);
 
 	strich(50,'-');
 	printf("Flaeche regelmaessiger Polygone\n");
@@ -27,7 +30,9 @@ int main (int argc, char **argv)
 
 	calcPolygons(polygons, params);
 	
-	outputPolygons(polygons, params.max - params.min);
+	outputPolygons(polygons, params.max - params.min + 1);
+
+	free(polygons);
 
 	printf("\nServus! \n");
 	/*system("pause");*/
