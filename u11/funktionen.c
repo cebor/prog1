@@ -131,5 +131,5 @@ void usage()
 	printf("Usage: polygon\n");
 	printf("-emin:     minimum corners\n");
 	printf("-emax:     maximum corners\n");
-	printf("-f:        radius\n");
+	printf("-r:        radius\n");
 }
