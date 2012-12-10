@@ -56,20 +56,11 @@ cl_errors_t scanCommandLine(int argc, char **argv, mainParameters_t *params)
 		if (argv[i][0] == '-')
 		{
 			if (strcmp(&argv[i][1], "emin") == 0)
-			{
 				params->min = atoi(argv[i+1]);
-				printf("-emin %d\n", params->min);
-			}
 			else if (strcmp(&argv[i][1], "emax") == 0)
-			{
 				params->max = atoi(argv[i+1]);
-				printf("-emax %d\n", params->max);
-			}
 			else if (strcmp(&argv[i][1], "r") == 0)
-			{
 				params->radius = atof(argv[i+1]);
-				printf("-r %g\n", params->radius);
-			}
 			else
 				return CL_UNKOWNPARAM;
 		}
@@ -96,7 +87,7 @@ void printCLError(cl_errors_t err)
 		case CL_NOERROR:
 			break;
 		case CL_EMINOUTOFRANGE:
-			printf("-emin <= 0\n");
+			printf("-emin <= 2\n");
 			usage();
 			exit(CL_EMINOUTOFRANGE);
 			break;

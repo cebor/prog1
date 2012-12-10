@@ -15,8 +15,8 @@ int main (int argc, char **argv)
 	mainParameters_t params ;
 	polygon_t *polygons;
 
-	params.min = 0;
-	params.max = 0;
+	params.min    = 0;
+	params.max    = 0;
 	params.radius = 0;
 
 	printCLError(scanCommandLine(argc, argv, &params));
