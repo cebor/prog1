@@ -87,27 +87,27 @@ void printCLError(cl_errors_t err)
 		case CL_NOERROR:
 			break;
 		case CL_EMINOUTOFRANGE:
-			printf("-emin <= 2\n");
+			printf("Error: -emin <= 2\n");
 			usage();
 			exit(CL_EMINOUTOFRANGE);
 			break;
 		case CL_EMAXOUTOFRANGE:
-			printf("-emax < -emin\n");
+			printf("Error: -emax < -emin\n");
 			usage();
 			exit(CL_EMAXOUTOFRANGE);
 			break;
 		case CL_RADIUSINVALID:
-			printf("-r < 0.0\n");
+			printf("Error: -r < 0.0\n");
 			usage();
 			exit(CL_RADIUSINVALID);
 			break;
 		case CL_PARAMMISSING:
-			printf("missing parameter\n");
+			printf("Error: missing parameter\n");
 			usage();
 			exit(CL_PARAMMISSING);
 			break;
 		case CL_UNKOWNPARAM:
-			printf("unknown parameter\n");
+			printf("Error: unknown parameter\n");
 			usage();
 			exit(CL_UNKOWNPARAM);
 			break;
