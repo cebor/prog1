@@ -49,26 +49,37 @@ void outputPolygons(polygon_t *data, int n_Lines)
 
 cl_errors_t scanCommandLine(int argc, char **argv, mainParameters_t *params)
 {
-	int i;
+	boolean_t foundR, foundMin, foundMax;
+	foundR = foundMin = foundMax = FALSE;
 
-	for (i = 1; i < argc; i += 2)
+	int i = 1;
+
+	while (i < argc)
 	{
-		if (argv[i][0] == '-')
+		if (strcmp(argv[i], "-emin") == 0)
 		{
-			if (strcmp(&argv[i][1], "emin") == 0)
-				params->min = atoi(argv[i+1]);
-			else if (strcmp(&argv[i][1], "emax") == 0)
-				params->max = atoi(argv[i+1]);
-			else if (strcmp(&argv[i][1], "r") == 0)
-				params->radius = atof(argv[i+1]);
-			else
-				return CL_UNKOWNPARAM;
+			i++;
+			params->min = atoi(argv[i]);
+			foundMin = TRUE;
+		}
+		else if (strcmp(argv[i], "-emax") == 0)
+		{
+			i++;
+			params->max = atoi(argv[i]);
+			foundMax = TRUE;
+		}
+		else if (strcmp(argv[i], "-r") == 0)
+		{
+			i++;
+			params->radius = atof(argv[i]);
+			foundR = TRUE;
 		}
 		else
 			return CL_UNKOWNPARAM;
+		i++;
 	}
 
-	if (!params->min || !params->max || !params->radius)
+	if (!foundMin || !foundMax || !foundR)
 		return CL_PARAMMISSING;
 	else if (params->min <= 2)
 		return CL_EMINOUTOFRANGE;

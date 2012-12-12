@@ -14,12 +14,11 @@ int main (int argc, char **argv)
 {
 	mainParameters_t params ;
 	polygon_t *polygons;
+	cl_errors_t error;
 
-	params.min    = 0;
-	params.max    = 0;
-	params.radius = 0;
+	error = scanCommandLine(argc, argv, &params);
 
-	printCLError(scanCommandLine(argc, argv, &params));
+	printCLError(error);
 
 	polygons = malloc(sizeof(polygon_t) * (params.max - params.min + 1));
 	if (polygons == NULL) exit(0);
