@@ -36,10 +36,10 @@ void pushFront(t_Listenkopf *li, const char *s)
    t_element *p;                                     // pointer
    p = (t_element*) malloc(sizeof(t_element));       // Speicher anfordern
    Assert(p != NULL, "kein Speicher bei malloc");     // prüfen 
-   strcpy (p->inhalt, s);                            // Element f?llen
+   strcpy (p->inhalt, s);                            // Element füllen
    p->next = NULL;
 
-   // vorn einf?gen:
+   // vorn einfügen:
    p->next = li->erstesElement;
    li->erstesElement = p;
 

@@ -2,7 +2,7 @@
 // Modul     : inf1.c                                              
 // Verfasser : Feindor / Schmidt                                         
 // Datum     : Urprogramm 1.10.1996                                           
-// Inhalt    : Hilfsfunktionen f?r Inf 1                           
+// Inhalt    : Hilfsfunktionen für Inf 1                           
 // Änderungen: 5.11.2010
 //*******************************************************************
 // Einbinden von nötigen Header-Dateien                      

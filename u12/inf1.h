@@ -8,17 +8,16 @@
 #ifndef INF1_H
 #define INF1_H
 
-// Einbinden von n?tigen Header-Dateien                              
+// Einbinden von nötigen Header-Dateien                              
 #include <stdio.h>  // Standard Input/ Output  z.B. scanf, printf 
 #include <stdlib.h>  // für Standard-Utility-Funktionen wie exit() oder rand() 
-#include <conio.h>
 
 // Standarddeklarationen 
 typedef unsigned char byte;
 typedef enum {false=0, true=1} bool;   // in C99 schon vorhanden
 
 // Deklaration von Prototypen, die in gesonderten Moduln (z.B.inf1.c)
-// bereitgestellt werden. Diese Moduln m?ssen daher dazugelinkt werden 
+// bereitgestellt werden. Diese Moduln müssen daher dazugelinkt werden 
 void strich (int n, char c);      // gibt n mal das Zeichen c aus 
 void dialog(char *ueberschrift);  // gibt Überschrift aus
 

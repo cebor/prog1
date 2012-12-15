@@ -10,7 +10,7 @@
 
 #define  N 10  // Anzahl der Elemente
 
-#define TEST     // falls man zusehen m?chte
+#define TEST     // falls man zusehen möchte
 
 char testListe[N][LAENGE];   // globale Testdaten N Elemente der Standard-LAENGE
 
@@ -49,7 +49,7 @@ void testTeil1 (t_Listenkopf *li)
 	{
 		popFront(li, s);
 		printf("pop: %s Rest: \n",s);
-		Assert (strcmp(s, testListe[N-i-1])==0, "falsche Reihenfolge");// pr?fen Folge
+		Assert (strcmp(s, testListe[N-i-1])==0, "falsche Reihenfolge");// prüfen Folge
 		Assert (li->anzahlElemente == (N-i-1), "falsche Elementezahl");//Anzahl
 		printListe (li);
 #ifdef TEST
@@ -80,7 +80,7 @@ void testTeil2 (t_Listenkopf *li)
 	{
 		popFront(li, s);
 		printf("pop: %s  Rest: \n",s);
-		Assert (strcmp(s, testListe[i])==0, "falsche Reihenfolge");//pr?fen Folge
+		Assert (strcmp(s, testListe[i])==0, "falsche Reihenfolge");//prüfen Folge
 		Assert (li->anzahlElemente == (N-i-1), "falsche Elementezahl");//Anzahl
 		printListe (li);
 #ifdef TEST
