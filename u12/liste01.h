@@ -1,9 +1,9 @@
 //*********************************************************************
 // Header File : liste01.h
-// ADT für Verwaltung einer einfach verketteten Liste
-// Verfasser   : R.Feindor / R.Hüttl
+// ADT fÃ¼r Verwaltung einer einfach verketteten Liste
+// Verfasser   : R.Feindor / R.HÃ¼ttl
 // Datum       : 18.02.2008
-// Änderungen  : 21.12.2010 J. Schmidt
+// Ã„nderungen  : 21.12.2010 J. Schmidt
 //*********************************************************************
 
 #ifndef LISTE01_H
@@ -17,7 +17,7 @@
 
 typedef struct t_element
 { 
-   char inhalt[LAENGE];       // Inhalt als String fester Länge 
+   char inhalt[LAENGE];       // Inhalt als String fester LÃ¤nge 
    struct t_element *next;    // Zeiger auf den Nachfolger 
 } t_element;
 
@@ -41,7 +41,7 @@ void printListe(const t_Listenkopf *li);
 // erzeugt ein neues Element und haengt es hinten an
 void pushBack(t_Listenkopf *li, const char *s);
 
-// gibt das erste Element zurück und entfernt es aus li
+// gibt das erste Element zurÃ¼ck und entfernt es aus li
 void popFront(t_Listenkopf *li, char *s);
 
 

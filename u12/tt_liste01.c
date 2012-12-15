@@ -1,20 +1,20 @@
 //*********************************************************************
 // Source File : tt_liste01.c
-// Testtreiber für ADT liste (einfach verkettete Liste)
-// Verfasser   : R.Feindor / R.Hüttl
+// Testtreiber fÃ¼r ADT liste (einfach verkettete Liste)
+// Verfasser   : R.Feindor / R.HÃ¼ttl
 // Datum       : 18.02.2008
-// Änderungen  : 21.12.2010 J. Schmidt
+// Ã„nderungen  : 21.12.2010 J. Schmidt
 //*********************************************************************
 #include "liste01.h"
 #include <time.h>
 
 #define  N 10  // Anzahl der Elemente
 
-#define TEST     // falls man zusehen möchte
+#define TEST     // falls man zusehen m?chte
 
 char testListe[N][LAENGE];   // globale Testdaten N Elemente der Standard-LAENGE
 
-// Generieren von zufälligen globalen Testdaten
+// Generieren von zufÃ¤lligen globalen Testdaten
 void GenTestdaten(void) 
 {	
 	int i, z;
@@ -22,7 +22,7 @@ void GenTestdaten(void)
 	for (i=0; i < N; i++)
 	{
 		z = rand() % (10*N);    // Zufallszahl 0..10N
-		sprintf (testListe[i], "Testelement %5i", z); // füllen Elemente in testListe
+		sprintf (testListe[i], "Testelement %5i", z); // fÃ¼llen Elemente in testListe
 	}
 }
 
@@ -49,7 +49,7 @@ void testTeil1 (t_Listenkopf *li)
 	{
 		popFront(li, s);
 		printf("pop: %s Rest: \n",s);
-		Assert (strcmp(s, testListe[N-i-1])==0, "falsche Reihenfolge");// prüfen Folge
+		Assert (strcmp(s, testListe[N-i-1])==0, "falsche Reihenfolge");// pr?fen Folge
 		Assert (li->anzahlElemente == (N-i-1), "falsche Elementezahl");//Anzahl
 		printListe (li);
 #ifdef TEST
@@ -80,7 +80,7 @@ void testTeil2 (t_Listenkopf *li)
 	{
 		popFront(li, s);
 		printf("pop: %s  Rest: \n",s);
-		Assert (strcmp(s, testListe[i])==0, "falsche Reihenfolge");//prüfen Folge
+		Assert (strcmp(s, testListe[i])==0, "falsche Reihenfolge");//pr?fen Folge
 		Assert (li->anzahlElemente == (N-i-1), "falsche Elementezahl");//Anzahl
 		printListe (li);
 #ifdef TEST

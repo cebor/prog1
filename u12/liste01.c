@@ -1,9 +1,9 @@
 //*********************************************************************
 // Source File : liste01.c
-// ADT für Verwaltung einer einfach verketteten Liste
-// Verfasser   : R.Feindor / R.Hüttl
+// ADT fÃ¼r Verwaltung einer einfach verketteten Liste
+// Verfasser   : R.Feindor / R.HÃ¼ttl
 // Datum       : 18.02.2008
-// Änderungen  : 21.12.2010 J. Schmidt
+// Ã„nderungen  : 21.12.2010 J. Schmidt
 //*********************************************************************
 #include "liste01.h"
 
@@ -17,7 +17,7 @@ void pushBack(t_Listenkopf *li, const char *s)
 {
 }
 
-// gibt das erste Element zurück und entfernt es aus li
+// gibt das erste Element zurÃ¼ck und entfernt es aus li
 void popFront(t_Listenkopf *li, char *s)
 {
 }
@@ -35,11 +35,11 @@ void pushFront(t_Listenkopf *li, const char *s)
 {
    t_element *p;                                     // pointer
    p = (t_element*) malloc(sizeof(t_element));       // Speicher anfordern
-   Assert(p != NULL, "kein Speicher bei malloc");     // prüfen 
-   strcpy (p->inhalt, s);                            // Element füllen
+   Assert(p != NULL, "kein Speicher bei malloc");     // prÃ¼fen 
+   strcpy (p->inhalt, s);                            // Element f?llen
    p->next = NULL;
 
-   // vorn einfügen:
+   // vorn einf?gen:
    p->next = li->erstesElement;
    li->erstesElement = p;
 
