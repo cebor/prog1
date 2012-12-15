@@ -12,7 +12,7 @@
 
 int main (int argc, char **argv)    
 {
-	mainParameters_t params ;
+	mainParameters_t params;
 	polygon_t *polygons;
 	cl_errors_t error;
 
