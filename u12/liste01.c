@@ -57,6 +57,7 @@ void popFront (t_Listenkopf *li, char *s)
 {
 	t_element *p;
 
+	// Liste muss min ein Element enthalten
 	if(li->erstesElement != NULL)
 	{
 		p = li->erstesElement;
