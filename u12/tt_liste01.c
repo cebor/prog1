@@ -19,10 +19,10 @@ void GenTestdaten(void)
 {	
 	int i, z;
 	srand((int) time(0)); // Start des Zufallsgenerators
-	for (i=0; i < N; i++)
+	for (i = 0; i < N; i++)
 	{
 		z = rand() % (10*N);    // Zufallszahl 0..10N
-		sprintf (testListe[i], "Testelement %5i", z); // füllen Elemente in testListe
+		sprintf(testListe[i], "Testelement %5i", z); // füllen Elemente in testListe
 	}
 }
 
@@ -33,30 +33,32 @@ void testTeil1 (t_Listenkopf *li)
 
 	// Testfall 1:
 	printf("Testfall 1: push und print\n");
-	for (i=0; i<N; i++)
-		pushFront (li, testListe[i]);
+	for (i = 0; i < N; i++)
+		pushFront(li, testListe[i]);
 
-	printListe (li);
-	Assert (li->anzahlElemente == N, "falsche Elementezahl");
+	printListe(li);
+	Assert(li->anzahlElemente == N, "falsche Elementezahl");
 #ifdef TEST
-	system("pause");
+	printf("Press Enter...\n");
+	while (getchar() != '\n');
 #endif
 
 	// Testfall 2
 	printf("Testfall 2: pop einzeln\n");
 
-	for (i=0; i< N; i++)
+	for (i = 0; i < N; i++)
 	{
 		popFront(li, s);
-		printf("pop: %s Rest: \n",s);
-		Assert (strcmp(s, testListe[N-i-1])==0, "falsche Reihenfolge");// prüfen Folge
-		Assert (li->anzahlElemente == (N-i-1), "falsche Elementezahl");//Anzahl
+		printf("pop: %s  Rest: \n",s);
+		Assert(strcmp(s, testListe[N-i-1])==0, "falsche Reihenfolge");// prüfen Folge
+		Assert(li->anzahlElemente == (N-i-1), "falsche Elementezahl");//Anzahl
 		printListe (li);
 #ifdef TEST
-		system("pause");
+	printf("Press Enter...\n");
+	while (getchar() != '\n');
 #endif
 	}
-	Assert (li->anzahlElemente == 0, "falsche Elementezahl");
+	Assert(li->anzahlElemente == 0, "falsche Elementezahl");
 }
 
 void testTeil2 (t_Listenkopf *li)
@@ -65,29 +67,31 @@ void testTeil2 (t_Listenkopf *li)
 	char s[LAENGE];
 	// Testfall 3:
 	printf("Testfall 3: anfuegen und zeigen\n");
-	for (i=0; i<N; i++)
-		pushBack (li, testListe[i]);
+	for (i = 0; i < N; i++)
+		pushBack(li, testListe[i]);
 
-	printListe (li);
-	Assert (li->anzahlElemente == N, "falsche Elementezahl");
+	printListe(li);
+	Assert(li->anzahlElemente == N, "falsche Elementezahl");
 #ifdef TEST
-	system("pause");
+	printf("Press Enter...\n");
+	while (getchar() != '\n');
 #endif
 
 	// Testfall 4
 	printf("Testfall 4: pop einzeln\n");
-	for (i=0; i< N; i++)
+	for (i = 0; i < N; i++)
 	{
 		popFront(li, s);
 		printf("pop: %s  Rest: \n",s);
-		Assert (strcmp(s, testListe[i])==0, "falsche Reihenfolge");//prüfen Folge
-		Assert (li->anzahlElemente == (N-i-1), "falsche Elementezahl");//Anzahl
-		printListe (li);
+		Assert(strcmp(s, testListe[i])==0, "falsche Reihenfolge");//prüfen Folge
+		Assert(li->anzahlElemente == (N-i-1), "falsche Elementezahl");//Anzahl
+		printListe(li);
 #ifdef TEST
-		system("pause");
+	printf("Press Enter...\n");
+	while (getchar() != '\n');
 #endif
 	}
-	Assert (li->anzahlElemente == 0, "falsche Elementezahl");
+	Assert(li->anzahlElemente == 0, "falsche Elementezahl");
 }
 
 int main (void)
@@ -97,10 +101,10 @@ int main (void)
 	GenTestdaten();
 	initListe(&liste);
 	printf("Testtreiber beginnt mit leerer Liste:\n");
-	printListe(&liste); 
-	testTeil1(&liste);   
+	printListe(&liste);
+	testTeil1(&liste);
 	testTeil2(&liste); 
-	printf("Testtreiber erfolgreich beendet.");
+	printf("Testtreiber erfolgreich beendet.\n");
 
 	return (0);
 }

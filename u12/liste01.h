@@ -16,16 +16,16 @@
 #define NULLSTRING ""
 
 typedef struct t_element
-{ 
-   char inhalt[LAENGE];       // Inhalt als String fester Länge 
-   struct t_element *next;    // Zeiger auf den Nachfolger 
+{
+	char inhalt[LAENGE];		// Inhalt als String fester Länge 
+	struct t_element *next;		// Zeiger auf den Nachfolger 
 } t_element;
 
 typedef struct  
 {
-   struct t_element *erstesElement;
-   struct t_element *letztesElement;
-   int anzahlElemente;
+	struct t_element *erstesElement;
+	struct t_element *letztesElement;
+	int anzahlElemente;
 } t_Listenkopf;
 
 
@@ -33,17 +33,16 @@ typedef struct
 void initListe (t_Listenkopf *li);
 
 // erzeugt ein neues Element und fuegt ese vorne ein
-void pushFront(t_Listenkopf *li, const char *s);
+void pushFront (t_Listenkopf *li, const char *s);
 
 // gibt die Liste li am Bildschirm aus
-void printListe(const t_Listenkopf *li);
+void printListe (const t_Listenkopf *li);
 
 // erzeugt ein neues Element und haengt es hinten an
-void pushBack(t_Listenkopf *li, const char *s);
+void pushBack (t_Listenkopf *li, const char *s);
 
 // gibt das erste Element zurück und entfernt es aus li
-void popFront(t_Listenkopf *li, char *s);
+void popFront (t_Listenkopf *li, char *s);
 
 
 #endif // LISTE01_H
-
