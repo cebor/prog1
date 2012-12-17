@@ -41,7 +41,7 @@ ewea_t ewea (int a, int b)
 
 	tmp = rtn.x;
 	rtn.x = rtn.y;
-	rtn.y = tmp - floor(a/b)*rtn.y;
+	rtn.y = tmp - floor(a/b) * rtn.y;
 
 	return rtn;
 }
