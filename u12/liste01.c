@@ -22,7 +22,7 @@ void printListe (const t_Listenkopf *li)
 // erzeugt ein neues Element und haengt es hinten an
 void pushBack (t_Listenkopf *li, const char *s)
 {
-	t_element *p, *q;								// pointer
+	t_element *p;								// pointer
 	p = (t_element*) malloc(sizeof(t_element));		// Speicher anfordern
 	Assert(p != NULL, "kein Speicher bei malloc");	// prüfen
 	strcpy(p->inhalt, s);							// Element füllen
@@ -35,18 +35,10 @@ void pushBack (t_Listenkopf *li, const char *s)
 		li->letztesElement = p;
 		li->erstesElement  = p;
 	}
-	// Liste enthält genau ein Element
-	else if (li->letztesElement == li->erstesElement)
-	{
-		q = li->erstesElement;
-		q->next = p;
-		li->letztesElement = p;
-	}
 	// Liste enthält mehr als ein Element
 	else
 	{
-		q = li->letztesElement;
-		q->next = p;
+		li->letztesElement->next = p;
 		li->letztesElement = p;
 	}
 	li->anzahlElemente++;
