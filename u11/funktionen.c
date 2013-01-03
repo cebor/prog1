@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include "funktionen.h"
 
+
 #define PI 3.14159265358979323846
 
 void strich (int n, char c) /* gibt n mal das Zeichen c aus */

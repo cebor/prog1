@@ -12,7 +12,7 @@
 #include <stdio.h>  // Standard Input/ Output  z.B. scanf, printf 
 #include <stdlib.h>  // für Standard-Utility-Funktionen wie exit() oder rand() 
 
-// Standarddeklarationen 
+// Standarddeklarationen
 typedef unsigned char byte;
 typedef enum {false=0, true=1} bool;   // in C99 schon vorhanden
 

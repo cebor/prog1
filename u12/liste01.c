@@ -64,6 +64,8 @@ void popFront (t_Listenkopf *li, char *s)
 		else
 			li->erstesElement = li->letztesElement = NULL;
 
+		free(p);
+
 		li->anzahlElemente--;
 	}
 }
