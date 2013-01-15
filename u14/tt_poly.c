@@ -1,37 +1,37 @@
 //*******************************************************************  
 // Programm    : tt_poly                                               
-// Übungsbeispiel für:                                                 
-//               Testprogramm für Polynom                               
+// Ãœbungsbeispiel fÃ¼r:                                                 
+//               Testprogramm fÃ¼r Polynom                               
 // Verfasser   : Feindor / Schmidt                                          
 // Datum       : Urprogramm: 1.11.1997                                             
 // Eingabe     : keine
-// Verarbeitung: Erzeugen Testdaten,  Durchführen Test
+// Verarbeitung: Erzeugen Testdaten,  DurchfÃ¼hren Test
 // Ausgabe     : Testprotokoll
-// Änderungen  : 5.11.2010
+// Ã„nderungen  : 5.11.2010
 //*******************************************************************
 
-// Einbinden von nötigen Header-Dateien *****************************
+// Einbinden von nÃ¶tigen Header-Dateien *****************************
 #include "inf1.h" // alles Allgemeine
 #include "polynom.h"  // Polynom-spezifischer Header; Code in .c
 
 #include <time.h>    // wegen time
 #include <math.h>    // wegen math. Funktionen pow()
 
-/* nötige globale Deklarationen */
+/* nÃ¶tige globale Deklarationen */
 #define MAX_GRAD 20
 
-// Erzeugung der benötigten Test- Daten (Koeffizienten)       
-// erzeugt zufällig Koeffizienten a[0],...a[grad] 
+// Erzeugung der benÃ¶tigten Test- Daten (Koeffizienten)       
+// erzeugt zufÃ¤llig Koeffizienten a[0],...a[grad] 
 void ErzeugenKoeff(const int grad, int a[])
 {
 	int i;
 	for (i=0; i<= grad; i=i+1)
 	{
 		a[i] = (rand()%100) -50;    // Zufallszahl -50..49
-		// hier könnte ein beliebiger Algorithmus stehen, auch ohne random
+		// hier kÃ¶nnte ein beliebiger Algorithmus stehen, auch ohne random
 	}
 }
-// Definition der benötigten Test- Funktionen       
+// Definition der benÃ¶tigten Test- Funktionen       
 // Berechnung des Wertes des Polynoms a[0] + a[1] x + ... + a[n] x hoch n 
 // zur Kontrolle mithilfe Standardfunktion pow 
 double KontrollePolynomWert (const int n, const int a[], const double x)
@@ -63,19 +63,19 @@ void tt_polyAbl(void)
 	int n;          // Polynomgrad 
 	int a[MAX_GRAD+1];      // Koeffizientenarray a[0] ... a[MAX_GRAD]  
 
-	const int anzTest = 100;    // Anzahl Testdurchläufe  
-	const double eps = 1E-6;  // Schranke für Fehler 
+	const int anzTest = 100;    // Anzahl TestdurchlÃ¤ufe  
+	const double eps = 1E-6;  // Schranke fÃ¼r Fehler 
 	const double xmin = -10.0, xmax = 10.0, xdelta = 0.1;   // Wertebereich 
 	int t,          // Test-Lauf 
 		status;		 // Ergebnis der Nullstellensuche 
 	double x,        // Argument  
-		s;		  // Startwert für Nullstellensuche 
+		s;		  // Startwert fÃ¼r Nullstellensuche 
 	double y1, y2;  // Polynomwert und Kontrollwert 
 	double absrelF, // Absolutbetrag des relativen Fehlers 
 		sumF;    // Summe der relativen Fehler je n
 
 	//************************ Anweisungsteil  ****************************
-	// Dialogeröffnung 
+	// DialogerÃ¼ffnung 
 	dialog("tt_poly2: Testtreiber fuer PolyAblWert");
 
 	// Anweisungen    
@@ -84,13 +84,13 @@ void tt_polyAbl(void)
 	for (t=1; t<= anzTest; t++)       // Test wird anzTest mal durchlaufen 
 	{
 		printf("Testlauf %i gestartet! \n", t);
-		for (n= 1; n<= MAX_GRAD; n++)  // für jeden Grad wird ein Polynom erzeugt 
+		for (n= 1; n<= MAX_GRAD; n++)  // fÃ¼r jeden Grad wird ein Polynom erzeugt 
 		{
 			printf("Test %2i mit n= %2i gestartet ",t,n);
 			ErzeugenKoeff(n, a);
 			// Test Polynomwerte und Ableitungswerte
 			sumF =0;  // Summe relative Fehler je Polynom 
-			for (x=xmin; x<= xmax; x=x+ xdelta)  // viele Werte für jedes Polynom 
+			for (x=xmin; x<= xmax; x=x+ xdelta)  // viele Werte fÃ¼r jedes Polynom 
 			{
 				// Polynomwert kontrollieren
 				y1 = PolynomWert(n, a, x);
@@ -157,8 +157,8 @@ void tt_polyWert(void)
 	int n;          // Polynomgrad
 	int a[MAX_GRAD+1];      // Koeffizientenarray a[0] ... a[MAX_GRAD]
 
-	const int anzTest = 100;    // Anzahl Testdurchläufe
-	const double eps = 1E-9;  // = 0.000000001; Schranke für relativen Fehler
+	const int anzTest = 100;    // Anzahl TestdurchlÃ¤ufe
+	const double eps = 1E-9;  // = 0.000000001; Schranke fÃ¼r relativen Fehler
 	const double xmin = -10.0, xmax = 10.0, xdelta = 0.1;   // Wertebereich
 	int t;          // Test-Lauf
 	double x;        // Argument
@@ -167,7 +167,7 @@ void tt_polyWert(void)
 		sumF;    // Summe der relativen Fehler je n
 
 	//************************ Anweisungsteil  ****************************
-	// Dialogeröffnung
+	// DialogerÃ¶ffnung
 	dialog("tt_poly: Testprogramm fuer PolynomWert");
 
 	// Anweisungen
@@ -176,13 +176,13 @@ void tt_polyWert(void)
 	for (t = 1; t <= anzTest; t++)       // Test wird anzTest mal durchlaufen
 	{
 		printf("Testlauf %i gestartet! \n", t);
-		for (n = 1; n <= MAX_GRAD; n++)  // für jeden Grad wird ein Polynom erzeugt
+		for (n = 1; n <= MAX_GRAD; n++)  // fÃ¼r jeden Grad wird ein Polynom erzeugt
 		{
 			printf("Test %2i mit n= %2i gestartet ", t, n);
 			ErzeugenKoeff(n, a);
 			sumF = 0;  // Summe relative Fehler je n
 
-			for (x = xmin; x <= xmax; x = x + xdelta)  // viele Werte für jedes Polynom
+			for (x = xmin; x <= xmax; x = x + xdelta)  // viele Werte fÃ¼r jedes Polynom
 			{
 				y1 = PolynomWert(n, a, x);
 				y2 = KontrollePolynomWert(n, a, x);

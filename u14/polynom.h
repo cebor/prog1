@@ -1,9 +1,9 @@
 //*******************************************************************
 // include-file: polynom.h
-// Header-Datei für Polynom
+// Header-Datei fÃ¼r Polynom
 // Verfasser   : Feindor/Schmidt
 // Datum       : Urprogramm 1.10.1996
-// letzte Änderungen: 9.1.2013
+// letzte Ã„nderungen: 9.1.2013
 // 
 //*******************************************************************
 #ifndef POLYNOM_H
@@ -18,5 +18,9 @@ double PolyAblWert (const int n, const int a[], const double x);
 // Berechnung einer Nullstelle des Polynoms (n, a) aus Startwert s
 // status 0: Nullstelle gefunden;1: waagrechte Tangente;2: keine Konvergenz
 double Nullstelle (const int n, const int a[],const double s, int * status);
+
+void EinlesenGrad (int *);
+void EinlesenKoeff (int, int *);
+void EinlesenArg (int *);
 
 #endif

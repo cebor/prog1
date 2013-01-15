@@ -5,11 +5,30 @@
 
 int main()
 {
-	// Einkommentieren zum Start des Testtreibers für Polynomwertberechnung (Aufgabe 1)
+	int n;
+	int *k;
+	int arg;
+
+
+	// Einkommentieren zum Start des Testtreibers fÃ¼r Polynomwertberechnung (Aufgabe 1)
 	// tt_polyWert();
 	
-	// Einkommentieren zum Start des Testtreibers für Nullstellenberechnung (Aufgabe 2)
+	// Einkommentieren zum Start des Testtreibers fÃ¼r Nullstellenberechnung (Aufgabe 2)
 	// tt_polyAbl();
+
+
+EinlesenGrad(&n);
+
+k = malloc(sizeof(int) * n);
+if (k = NULL) 
+{
+	printf("Kein Speicher !\n");
+	exit(0);
+}
+
+EinlesenKoeff(n, k);
+
+EinlesenArg(&arg);
 
 	return 0;
 }

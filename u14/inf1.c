@@ -2,10 +2,10 @@
 // Modul     : inf1.c                                              
 // Verfasser : Feindor / Schmidt                                         
 // Datum     : Urprogramm 1.10.1996                                           
-// Inhalt    : Hilfsfunktionen für Inf 1                           
-// Änderungen: 5.11.2010
+// Inhalt    : Hilfsfunktionen fÃ¼r Inf 1                           
+// Ã„nderungen: 5.11.2010
 //*******************************************************************
-// Einbinden von nötigen Header-Dateien                      
+// Einbinden von nÃ¶tigen Header-Dateien                      
 #include "inf1.h"
 
 // Hilfsfunktionen                                                   
@@ -18,20 +18,20 @@ void strich (int n, char c)  // gibt n mal das Zeichen c aus
 	printf("\n");
 }
 
-void dialog(char *Ueberschrift) // gibt Überschrift aus 
+void dialog(char *Ueberschrift) // gibt Ãœberschrift aus 
 {
 	strich (50, '-'); // Aufruf der eben definierten Funktion
 	printf("%s \n", Ueberschrift);
 	strich (50, '-');
 }
 
-// die folgenden Funktionen kommen später dazu
+// die folgenden Funktionen kommen spÃ¤ter dazu
 void Assert(bool ok, char *meldung) // gibt Fehlermeldung, wenn nicht ok 
 {
 	if (ok) return;
 
 	printf("\n*** Fehlerabbruch: *** %s *** \n", meldung);
-	// Hier können beliebige weitere Aktionen erfolgen
+	// Hier kÃ¶nnen beliebige weitere Aktionen erfolgen
 
 	system("pause");
 	exit(1);
@@ -41,7 +41,7 @@ void Assert(bool ok, char *meldung) // gibt Fehlermeldung, wenn nicht ok
 // kopiert in ziel aus quelle ab anzahl character
 void copy (char * ziel, char * quelle, short ab, short anzahl) 
 {
-// hier Text einfügen
+// hier Text einfÃ¼gen
 }
 */
 
