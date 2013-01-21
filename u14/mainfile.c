@@ -7,28 +7,34 @@ int main()
 {
 	int n;
 	int *k;
-	int arg;
+	double x, y;
+
+
+	EinlesenGrad(&n);
+
+	k = (int*) malloc(sizeof(int) * (n+1));
+	Assert(k != NULL, "Malloc fehlgeschlagen!");
+
+	EinlesenKoeff(n, k);
+
+	EinlesenArg(&x);
+
+	y = PolynomWert(n, k, x);
+
+	printf("Der Polynomwert an der Stelle x= %.2lf ist y= %.2lf\n", x, y);
+
+	free(k);
+
+
+	printf("Press Enter...\n");
+	while (getchar() != '\n');
 
 
 	// Einkommentieren zum Start des Testtreibers für Polynomwertberechnung (Aufgabe 1)
-	// tt_polyWert();
+	tt_polyWert();
 	
 	// Einkommentieren zum Start des Testtreibers für Nullstellenberechnung (Aufgabe 2)
-	// tt_polyAbl();
-
-
-EinlesenGrad(&n);
-
-k = malloc(sizeof(int) * n);
-if (k = NULL) 
-{
-	printf("Kein Speicher !\n");
-	exit(0);
-}
-
-EinlesenKoeff(n, k);
-
-EinlesenArg(&arg);
+	tt_polyAbl();
 
 	return 0;
 }

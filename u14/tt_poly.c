@@ -104,7 +104,8 @@ void tt_polyAbl(void)
 				{
 					printf("\n\t Fehler in Polynomberechnung! \n " \
 						"\t n= %i x= %8.4lf  y1= %15.10lf  y2= %15.10lf \n", n,x,y1,y2);
-					system("pause");
+					printf("Press Enter...\n");
+					while (getchar() != '\n');
 				}
 				// Ableitungswert kontrollieren
 				y1 = PolyAblWert(n, a, x);
@@ -119,7 +120,8 @@ void tt_polyAbl(void)
 				{
 					printf("\n\t Fehler in Berechnung der Ableitung! \n " \
 						"\t n= %i x= %8.4lf  y1= %15.10lf  y2= %15.10lf \n", n,x,y1,y2);
-					system("pause");
+					printf("Press Enter...\n");
+					while (getchar() != '\n');
 				}
 
 			}
@@ -131,14 +133,16 @@ void tt_polyAbl(void)
 				if (fabs(PolynomWert(n,a,y1)) > 0.01)
 				{
 					printf("Fehler in Berechnung der Nullstelle! \n ");
-					system("pause");
+					printf("Press Enter...\n");
+					while (getchar() != '\n');
 				};
 
 			if (status == 1)  // waagrechte Tangente
 				if (fabs(PolyAblWert(n,a,y1)) > eps)
 				{
 					printf("Fehler in Berechnung der Nullstelle! \n ");
-					system("pause");
+					printf("Press Enter...\n");
+					while (getchar() != '\n');
 				};
 
 
@@ -198,13 +202,15 @@ void tt_polyWert(void)
 				{
 					printf("\n\t Fehler in Polynomberechnung! \n " \
 						"\t n= %i x= %8.4lf  y1= %15.10lf  y2= %15.10lf \n", n,x,y1,y2);
-					system("pause");
+					printf("Press Enter...\n");
+					while (getchar() != '\n');
 				}
 			}
 			printf("und beendet. Summe rel. Fehler: %18.16lf\n", sumF);
 		}
 		printf("Testlauf %2i erfolgreich beendet! \n\n", t);
 	}
-	printf("Servus!");
-	system("pause");
+	printf("Servus!\n");
+	printf("Press Enter...\n");
+	while (getchar() != '\n');
 } 
