@@ -34,7 +34,7 @@ int main (int argc, char const *argv[])
 	printf("ggT: %2d\n", a.d);
 	printf("x: %4d\n", a.x);
 	printf("y: %4d\n", a.y);
-	
+
 	return 0;
 }
 

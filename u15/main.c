@@ -19,6 +19,10 @@ int main(int argc, char const *argv[])
 				system("clear");
 				listMA();
 				break;
+			case 3:
+				system("clear");
+				listAll();
+				break;
 			default:
 				system("clear");
 				exit(0);

@@ -3,7 +3,8 @@
 
 unsigned int menu (void);
 
-void listAz ();
-void listMA ();
+void listAz (void);
+void listMA (void);
+void listAll (void);
 
 #endif

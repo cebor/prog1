@@ -17,12 +17,11 @@ unsigned int menu (void)
 	return ch;
 }
 
-void listAz () {
+void listAz (void)
+{
 	FILE *az_f;
 
 	t_arbeitszeit az;
-
-	int i = 1;
 
 	az_f = fopen("assets/arbeitszeit.dat", "rb");
 
@@ -41,12 +40,11 @@ void listAz () {
 	printf("\n");
 }
 
-void listMA () {
+void listMA (void)
+{
 	FILE *ma_f;
 
 	t_mitarbeiter ma;
-
-	int i = 1;
 
 	ma_f = fopen("assets/mitarbeiter.dat", "rb");
 
@@ -61,6 +59,43 @@ void listMA () {
 	}
 
 	fclose(ma_f);
+
+	printf("\n");
+}
+
+void listAll (void)
+{
+	FILE  *az_f, *ma_f;
+
+	t_arbeitszeit az;
+	t_mitarbeiter ma;
+
+	az_f = fopen("assets/arbeitszeit.dat", "rb");
+	if(az_f == NULL)
+		fprintf(stderr, "Fehler beim Öffnen der Datei!\n");
+
+	ma_f = fopen("assets/mitarbeiter.dat", "rb");
+	if(ma_f == NULL)
+		fprintf(stderr, "Fehler beim Öffnen der Datei!\n");
+
+
+	fread(&az, sizeof(t_arbeitszeit), 1, az_f);
+	while (!feof(az_f))
+	{
+		fseek(ma_f, 0L, SEEK_SET);
+
+		fread(&ma, sizeof(t_mitarbeiter), 1, ma_f);
+		while (ma.id != az.id && !feof(ma_f))
+		{
+		  	fread(&ma, sizeof(t_mitarbeiter), 1, ma_f);
+		}
+
+		printf("%3d   %s    %s   %5.1f\n", az.id, ma.name, az.date, az.h);
+		fread(&az, sizeof(t_arbeitszeit), 1, az_f);
+	}
+	
+	fclose(ma_f);
+	fclose(az_f);
 
 	printf("\n");
 }
