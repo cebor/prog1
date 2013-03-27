@@ -94,7 +94,7 @@ void strtobin (char *str)
 
 	while (str[i] != 0)
 	{
-		printf("%c - %d - 0x%x - ", str[i], (int)str[i], (int)str[i]);
+		printf("%c - %3d - 0x%x - ", str[i], (int)str[i], (int)str[i]);
 
 		// Bin Umrechnung
 		for (j = 7; j >= 0; j--)
