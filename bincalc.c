@@ -45,7 +45,7 @@ void itobin (int32_t integer)
 
 	for (i = 31; i >= 0; i--)
 	{
-		printf("%c", ((integer & (1 << i)) != 0) + '0');
+		printf("%c", (char) ((integer & (1 << i)) != 0) + '0');
 	}
 
 	printf("\n\n");
@@ -56,7 +56,7 @@ void ftobin (float f)
 	int i;
 	int32_t w;
 
-	w = *((int32_t *) (&f));
+	w = *((int32_t *) &f);
 
 	for (i = 31; i >= 0; i--)
 	{
@@ -72,7 +72,7 @@ void ftobin (float f)
 				printf("Significand:\n");
 		}
 
-		printf("%c", ((w & (1 << i)) != 0) + '0');
+		printf("%c", (char) ((w & (1 << i)) != 0) + '0');
 
 		switch (i)
 		{
