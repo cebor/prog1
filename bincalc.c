@@ -53,10 +53,17 @@ void itobin (int32_t integer)
 
 void ftobin (float f)
 {
-	int i;
-	int32_t w;
+	union
+	{
+		int32_t i;
+		float f;
+	} uv;
 
-	w = *((int32_t *) &f);
+	int i;
+	
+	uv.f = f;
+
+	// w = *((int32_t *) &f); // ersetzt durch union
 
 	for (i = 31; i >= 0; i--)
 	{
@@ -72,7 +79,7 @@ void ftobin (float f)
 				printf("Significand:\n");
 		}
 
-		printf("%c", (char) ((w & (1 << i)) != 0) + '0');
+		printf("%c", (char) ((uv.i & (1 << i)) != 0) + '0');
 
 		switch (i)
 		{
